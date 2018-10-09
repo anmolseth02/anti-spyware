@@ -1,0 +1,120 @@
+<div class="">
+    <h4><span style="color: green; font-family: monospace; font-size: 0.3in">PhoneScanner:</span>
+        Scan phones for IPS apps
+    <span style="float: right; font-size: 15px"><a href="/kill" onclick="window.open('','_self').close();">&#x274C; Close App</a></span>
+    </h4>
+
+    <p>This application scans an Android and iOS phone for apps that can be used
+        to spy, track, or monitor a person.  To prepare the phones for scanning
+        follow the <a href="/instruction" target="_blank">instruction here.</a><br/>
+        Check built-in sharing features in your mobile using <a class="lead" href="/privacy"><u>Privacy Checkup</u></a>
+    </p>
+        <!-- <form id="kill-server" method="POST" action="/kill" name="form-kill">
+	     <button value="submit" class="btn btn-primary mx-2">Close App</button>
+	     </form> -->
+</div>
+<div class="row  h-100">
+    <div class="col-md-3 border py-2" style="height:80vh;">
+        <div align="center">
+            <label class="font-weight-bold lead">Scan</label>
+            <form id="scan_select" method="GET" action="/scan">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+		    {% for a in ["Android", "iOS", "Test"] %}
+                    <label class="btn btn-secondary {% if device==a.lower() %} active {% endif %}">
+                        <input type="radio" name="device" id="{{ a | lower }}"
+			       value="{{ a| lower }}" autocomplete="off"
+			       {% if device==a.lower() %} checked {% endif %}
+			> {{ a }}
+                    </label>
+		    {% endfor %}
+                    <!-- <label class="btn btn-secondary">
+                         <input type="radio" name="device" id="android" value="android" autocomplete="off"> Android
+			 </label>
+			 <label class="btn btn-secondary">
+                         <input type="radio" name="device" id="ios" value="ios" autocomplete="off"> iOS
+			 </label>
+			 <label class="btn btn-secondary">
+                         <input type="radio" name="device" id="test" value="test" autocomplete="off"> Test
+			 </label> -->
+                </div>
+                <label><b>Client ID</b>
+                <input class="form-control col-sm-10 col-md-10" name="clientid" id="client-id" type="text" value="{{ clientid }}"/></label>
+                <br/>
+                <button class="btn btn-primary mx-2">Scan</button>
+            </form>
+            {% for t in ["Android", "iOS", "test"] %}
+                <!-- button onclick="fetch('/scan/{{ t.lower() }}', '{{ t.lower() }}')" id="btn-android"
+                            class="btn btn-primary mx-2">{{ t }}</button -->
+            {% endfor %}
+            <hr/>
+        </div>
+        <div class="border-warning visible">
+            <form onsubmit="return false" name="form-metainfo" id="form-metainfo">
+                <label> Phone Serial No:</label>
+		<input class="form-control" name="serial" id="serial" type="text" placeholder="Device Id"
+                                     value="{{ serial }}" readonly>
+                 <input type="hidden" name="clientid" type="text" value="{{ clientid }}"/></label>
+                <textarea class="form-control " name="notes" id="notes" type="text" placeholder="Take notes here."
+                          rows="10" {% if not serial %}disabled{% endif %}></textarea>
+                <button onclick="postform(this)" id="btn-metainfo-submit"
+                        class="btn btn-primary btn-lg my-3">Save
+                </button>
+                <button onclick="reset_form(this)" id="btn-metainfo-reset"
+                        class="btn btn-outline-warning btn-lg my-3">Reset
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-9 border py-2" style="height: 80vh">
+        <div id="msg" class="alert alert-primary" style="">  {{ error | safe }}   </div>
+        <div class="w-100" style="height: 70vh; overflow: auto;">
+	    <label>Jailbroken/Rooted: <b>{{ isrooted }}</b></label>
+            <table class="table table-bordered w-100 h-100">
+                <thead>
+                <tr>
+                    <th style="width: 3%">Delete</th>
+                    <th style="width: 23%">App Name</th>
+                    <th style="width: 23%">App ID</th>
+                    <th style="width: 20%">Flags</th>
+                    <th style="width: 30%">Remarks</th>
+                </tr>
+                </thead>
+                <form id="form-applist" onsubmit="" method="post" name="form-applist" >
+                    <tbody id="applist" class="h-100">
+                        {% for appId, info in apps.items() %}
+                        <tr id="{{ appId.replace('.', '-') }}">
+                            {% if appId in sysapps %}
+                            <td align="center" ><a class="h4" onclick="" href="javascript:;" data-toggle="tooltip"
+                                   title="System App! Cannot delete">&otimes;</a></td>
+                            {%  else %}
+                            <td align="center"><a class="h4" onclick="delete_app('{{ appId }}', this)" href="javascript:;" data-toggle="tooltip"
+                                   title="Delete app">&otimes;</a></td>
+                            {% endif %}
+                            {% if info['title'] %}
+                            <td><a href="/details/app/{{ device }}?appId={{ appId }}&serial={{ serial }}" target="_blank"
+				class="text text-dark">{{ info['title'] }}</a></td>
+                            {% else %}
+  <td><a href="/details/app/{{ device }}?appId={{ appId }}&serial={{ serial }}" target="_blank"
+  class="text text-dark">Unnamed</a></td>
+
+
+                            {% endif %}
+                            <td><a class="{{ info.class_ }} appid" href="https://www.google.com/search?q={{ appId }}"
+                                   target="_blank"><code>{{ appId }}</code></a></td>
+                            <td>{{ info['html_flags'] | safe }}</td>
+                            <td><input type="text" placeholder="Remarks" class='form-control appnotes' name="{{ appId }}" /></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </form>
+            </table>
+            <!-- <button onclick="postform(this)" id="btn-submit"
+                     class="btn btn-primary btn-lg">Submit</button> -->
+        </div>
+        <div class="progress">
+            <div id='scan-prog' class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                 aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+            </div>
+        </div>
+    </div>
+</div>

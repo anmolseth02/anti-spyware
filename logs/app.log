@@ -1,0 +1,182 @@
+[2018-Sep-19 14:57] 127.0.0.1 GET http /? 200 OK
+[2018-Sep-19 14:57] 127.0.0.1 GET http /webstatic/bootstrap.min.css? 200 OK
+[2018-Sep-19 14:57] 127.0.0.1 GET http /webstatic/style.css?234 200 OK
+[2018-Sep-19 14:57] 127.0.0.1 GET http /webstatic/jquery-3.3.1.min.js? 200 OK
+[2018-Sep-19 14:57] 127.0.0.1 GET http /webstatic/bootstrap.min.js? 200 OK
+[2018-Sep-19 14:57] 127.0.0.1 GET http /webstatic/myjscript.js?3 200 OK
+[2018-Sep-19 14:57] 127.0.0.1 GET http /favicon.ico? 404 NOT FOUND
+[2018-Sep-19 14:59] 127.0.0.1 GET http /? 200 OK
+[2018-Sep-19 14:59] 127.0.0.1 GET http /favicon.ico? 404 NOT FOUND
+[2018-Sep-19 14:59] 127.0.0.1 GET http /scan?device=ios&clientid= 200 OK
+[2018-Sep-19 17:19] 127.0.0.1 GET http /? 200 OK
+[2018-Sep-19 17:19] 127.0.0.1 GET http /favicon.ico? 404 NOT FOUND
+[2018-Sep-19 17:19] 127.0.0.1 GET http /scan?device=ios&clientid=20180919_17_001 200 OK
+[2018-Sep-19 17:20] 127.0.0.1 GET http /scan?device=test&clientid= 200 OK
+[2018-Sep-19 17:49] 127.0.0.1 GET http /favicon.ico? 404 NOT FOUND
+[2018-Sep-19 17:49] 127.0.0.1 GET http /scan?device=android&clientid= 200 OK
+[2018-Sep-24 14:38] 127.0.0.1 GET http /? 200 OK
+[2018-Sep-24 14:38] 127.0.0.1 GET http /webstatic/bootstrap.min.css? 200 OK
+[2018-Sep-24 14:38] 127.0.0.1 GET http /webstatic/style.css?234 200 OK
+[2018-Sep-24 14:38] 127.0.0.1 GET http /webstatic/jquery-3.3.1.min.js? 200 OK
+[2018-Sep-24 14:38] 127.0.0.1 GET http /webstatic/bootstrap.min.js? 200 OK
+[2018-Sep-24 14:38] 127.0.0.1 GET http /webstatic/myjscript.js?3 200 OK
+[2018-Sep-24 14:38] 127.0.0.1 GET http /favicon.ico? 404 NOT FOUND
+[2018-Sep-24 14:39] 127.0.0.1 GET http /scan?device=ios&clientid=20180924_14_001 200 OK
+[2018-Sep-24 14:39] 127.0.0.1 GET http /scan?clientid= 200 OK
+[2018-Oct-04 17:10] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-04 17:10] 127.0.0.1 GET http /webstatic/style.css?234 200 OK
+[2018-Oct-04 17:10] 127.0.0.1 GET http /webstatic/bootstrap.min.css? 200 OK
+[2018-Oct-04 17:10] 127.0.0.1 GET http /webstatic/jquery-3.3.1.min.js? 200 OK
+[2018-Oct-04 17:10] 127.0.0.1 GET http /webstatic/myjscript.js?3 200 OK
+[2018-Oct-04 17:10] 127.0.0.1 GET http /webstatic/bootstrap.min.js? 200 OK
+[2018-Oct-04 17:11] 127.0.0.1 GET http /favicon.ico? 404 NOT FOUND
+[2018-Oct-04 17:11] 127.0.0.1 GET http /scan?device=ios&clientid=20181004_17_001 200 OK
+[2018-Oct-07 09:52] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-07 09:52] 127.0.0.1 GET http /webstatic/bootstrap.min.css? 304 NOT MODIFIED
+[2018-Oct-07 09:52] 127.0.0.1 GET http /webstatic/style.css?234 304 NOT MODIFIED
+[2018-Oct-07 09:52] 127.0.0.1 GET http /webstatic/jquery-3.3.1.min.js? 304 NOT MODIFIED
+[2018-Oct-07 09:52] 127.0.0.1 GET http /webstatic/bootstrap.min.js? 304 NOT MODIFIED
+[2018-Oct-07 09:52] 127.0.0.1 GET http /webstatic/myjscript.js?3 304 NOT MODIFIED
+[2018-Oct-07 09:53] 127.0.0.1 GET http /scan?device=ios&clientid=20181007_09_001 200 OK
+[2018-Oct-07 09:54] 127.0.0.1 GET http /scan?device=ios&clientid=20181007_09_001 200 OK
+[2018-Oct-07 09:54] 127.0.0.1 GET http /webstatic/bootstrap.min.css? 200 OK
+[2018-Oct-07 09:54] 127.0.0.1 GET http /webstatic/style.css?234 200 OK
+[2018-Oct-07 09:54] 127.0.0.1 GET http /webstatic/jquery-3.3.1.min.js? 200 OK
+[2018-Oct-07 09:54] 127.0.0.1 GET http /webstatic/bootstrap.min.js? 200 OK
+[2018-Oct-07 09:54] 127.0.0.1 GET http /webstatic/myjscript.js?3 200 OK
+[2018-Oct-07 09:54] 127.0.0.1 GET http /favicon.ico? 404 NOT FOUND
+[2018-Oct-07 09:54] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-07 09:54] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-07 09:54] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-07 09:54] 127.0.0.1 GET http /webstatic/bootstrap.min.css? 200 OK
+[2018-Oct-07 09:54] 127.0.0.1 GET http /webstatic/style.css?234 200 OK
+[2018-Oct-07 09:54] 127.0.0.1 GET http /webstatic/bootstrap.min.js? 200 OK
+[2018-Oct-07 09:54] 127.0.0.1 GET http /webstatic/jquery-3.3.1.min.js? 200 OK
+[2018-Oct-07 09:54] 127.0.0.1 GET http /webstatic/myjscript.js?3 200 OK
+[2018-Oct-07 09:54] 127.0.0.1 GET http /favicon.ico? 404 NOT FOUND
+[2018-Oct-07 09:54] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-07 09:54] 127.0.0.1 GET http /scan?device=ios&clientid=20181007_09_002 200 OK
+[2018-Oct-07 09:55] 127.0.0.1 GET http /details/app/ios?appId=ZOHDY.GoBus&serial=eac05075575868527e70b9ad903c974f7b8610c9 200 OK
+[2018-Oct-07 09:55] 127.0.0.1 GET http /details/app/ios?appId=com.apple.mobileme.fmf1&serial=eac05075575868527e70b9ad903c974f7b8610c9 200 OK
+[2018-Oct-07 09:55] 127.0.0.1 GET http /details/app/ios?appId=co.DilMile.DilMile&serial=eac05075575868527e70b9ad903c974f7b8610c9 200 OK
+[2018-Oct-07 09:56] 127.0.0.1 GET http /kill? 200 OK
+[2018-Oct-07 10:06] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-07 10:11] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-07 10:12] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-07 10:14] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-07 10:14] 127.0.0.1 GET http /webstatic/bootstrap.min.css? 200 OK
+[2018-Oct-07 10:14] 127.0.0.1 GET http /webstatic/jquery-3.3.1.min.js? 200 OK
+[2018-Oct-07 10:14] 127.0.0.1 GET http /webstatic/style.css?234 200 OK
+[2018-Oct-07 10:14] 127.0.0.1 GET http /webstatic/bootstrap.min.js? 200 OK
+[2018-Oct-07 10:14] 127.0.0.1 GET http /webstatic/myjscript.js?3 200 OK
+[2018-Oct-07 10:14] 127.0.0.1 GET http /favicon.ico? 404 NOT FOUND
+[2018-Oct-07 11:20] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-07 11:25] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-07 11:25] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-07 11:25] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-07 11:26] 127.0.0.1 GET http /scan?device=ios&clientid=20181007_09_003 200 OK
+[2018-Oct-07 11:26] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-07 11:26] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-07 16:13] 127.0.0.1 GET http /scan?device=ios&clientid= 200 OK
+[2018-Oct-07 16:13] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-07 16:13] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-07 16:17] 127.0.0.1 GET http /scan?device=ios&clientid= 200 OK
+[2018-Oct-07 16:17] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-07 16:17] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-07 16:17] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-07 16:17] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-07 16:17] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-07 16:18] 127.0.0.1 GET http /scan?device=ios&clientid= 200 OK
+[2018-Oct-07 16:18] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-07 16:18] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-07 16:18] 127.0.0.1 GET http /scan?clientid= 200 OK
+[2018-Oct-07 16:18] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-07 16:18] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-07 16:18] 127.0.0.1 GET http /scan?device=ios&clientid= 200 OK
+[2018-Oct-07 16:18] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-07 16:18] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-07 16:58] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-07 16:58] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-07 16:58] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-07 18:03] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-07 18:03] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-07 18:03] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-07 18:04] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-07 18:04] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-07 18:04] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-07 18:06] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-07 18:06] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-07 18:06] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-07 18:07] 127.0.0.1 GET http /scan?device=ios&clientid=20181007_09_003 200 OK
+[2018-Oct-07 18:07] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-07 18:07] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-08 09:04] 127.0.0.1 GET http /details/app/ios?appId=com.yourcompany.TVShowtracker&serial=eac05075575868527e70b9ad903c974f7b8610c9 200 OK
+[2018-Oct-08 09:04] 127.0.0.1 GET http /webstatic/style.css?234 304 NOT MODIFIED
+[2018-Oct-08 09:04] 127.0.0.1 GET http /webstatic/bootstrap.min.css? 304 NOT MODIFIED
+[2018-Oct-08 09:04] 127.0.0.1 GET http /webstatic/jquery-3.3.1.min.js? 304 NOT MODIFIED
+[2018-Oct-08 09:04] 127.0.0.1 GET http /webstatic/myjscript.js?3 304 NOT MODIFIED
+[2018-Oct-08 09:04] 127.0.0.1 GET http /webstatic/bootstrap.min.js? 304 NOT MODIFIED
+[2018-Oct-09 11:16] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-09 11:16] 127.0.0.1 GET http /webstatic/bootstrap.min.css? 304 NOT MODIFIED
+[2018-Oct-09 11:16] 127.0.0.1 GET http /webstatic/style.css?234 304 NOT MODIFIED
+[2018-Oct-09 11:16] 127.0.0.1 GET http /webstatic/bootstrap.min.js? 304 NOT MODIFIED
+[2018-Oct-09 11:16] 127.0.0.1 GET http /webstatic/jquery-3.3.1.min.js? 304 NOT MODIFIED
+[2018-Oct-09 11:16] 127.0.0.1 GET http /webstatic/myjscript.js?3 304 NOT MODIFIED
+[2018-Oct-09 11:16] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-09 11:16] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-09 11:16] 127.0.0.1 GET http /scan?device=test&clientid=20181009_11_001 200 OK
+[2018-Oct-09 11:16] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-09 11:16] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-09 11:18] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-09 11:18] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-09 11:18] 127.0.0.1 GET http /scan?device=ios&clientid=20181009_11_001 200 OK
+[2018-Oct-09 11:18] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-09 11:18] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-09 11:18] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-09 11:18] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-09 11:18] 127.0.0.1 GET http /scan?device=android&clientid= 200 OK
+[2018-Oct-09 11:18] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-09 11:18] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-09 12:28] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-09 12:28] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-09 12:28] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-09 12:28] 127.0.0.1 GET http /scan?device=ios&clientid=20181009_11_002 200 OK
+[2018-Oct-09 12:28] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-09 12:28] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-09 12:28] 127.0.0.1 GET http /scan?device=test&clientid=20181009_11_002 200 OK
+[2018-Oct-09 12:28] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-09 12:28] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-09 12:28] 127.0.0.1 GET http /scan?device=ios&clientid=20181009_11_002 200 OK
+[2018-Oct-09 12:28] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-09 12:28] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-09 12:31] 127.0.0.1 POST http /saveapps/14? 200 OK
+[2018-Oct-09 12:31] 127.0.0.1 POST http /savescan/14? 200 OK
+[2018-Oct-09 12:31] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-09 12:31] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-09 12:31] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-09 12:34] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-09 12:34] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-09 12:34] 127.0.0.1 GET http /scan?device=test&clientid=anmol001 200 OK
+[2018-Oct-09 12:34] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-09 12:34] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-09 12:35] 127.0.0.1 GET http /scan?device=ios&clientid=anmol001 200 OK
+[2018-Oct-09 12:35] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-09 12:35] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-09 12:49] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-09 12:49] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-09 12:49] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-09 12:50] 127.0.0.1 GET http /scan?device=ios&clientid=anmol002 200 OK
+[2018-Oct-09 12:50] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-09 12:50] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-09 12:50] 127.0.0.1 GET http /scan?device=ios&clientid=anmol003 200 OK
+[2018-Oct-09 12:50] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-09 12:50] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-09 12:51] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-09 12:51] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-09 12:51] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-09 12:52] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-09 12:52] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-09 12:52] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-09 12:52] 127.0.0.1 GET http /scan?device=ios&clientid=anmol004 200 OK
+[2018-Oct-09 12:52] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
+[2018-Oct-09 12:52] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
