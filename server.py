@@ -44,7 +44,7 @@ def close_connection(exception):
 @app.route("/", methods=['GET'])
 def index():
     return render_template(
-        'main.html',
+        'index.html',
         task = 'home',
         devices={
             'Android': android.devices(),

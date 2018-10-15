@@ -180,3 +180,30 @@
 [2018-Oct-09 12:52] 127.0.0.1 GET http /scan?device=ios&clientid=anmol004 200 OK
 [2018-Oct-09 12:52] 127.0.0.1 GET http /webstatic/bootstrap.min.js.map? 404 NOT FOUND
 [2018-Oct-09 12:52] 127.0.0.1 GET http /webstatic/bootstrap.min.css.map? 404 NOT FOUND
+[2018-Oct-13 18:00] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-13 18:00] 127.0.0.1 GET http /webstatic/bootstrap.min.css? 200 OK
+[2018-Oct-13 18:00] 127.0.0.1 GET http /webstatic/style.css?234 200 OK
+[2018-Oct-13 18:00] 127.0.0.1 GET http /webstatic/jquery-3.3.1.min.js? 200 OK
+[2018-Oct-13 18:00] 127.0.0.1 GET http /webstatic/bootstrap.min.js? 200 OK
+[2018-Oct-13 18:00] 127.0.0.1 GET http /webstatic/myjscript.js?3 200 OK
+[2018-Oct-13 18:00] 127.0.0.1 GET http /favicon.ico? 404 NOT FOUND
+[2018-Oct-13 18:00] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-13 18:01] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-13 18:01] 127.0.0.1 GET http /favicon.ico? 404 NOT FOUND
+[2018-Oct-13 18:14] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-13 18:14] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-13 18:14] 127.0.0.1 GET http /favicon.ico? 404 NOT FOUND
+[2018-Oct-13 18:17] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-13 18:23] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-13 18:24] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-13 18:24] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-13 18:24] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-13 18:24] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-13 18:28] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-13 18:29] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-13 18:29] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-13 18:30] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-15 11:22] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-15 11:22] 127.0.0.1 GET http /favicon.ico? 404 NOT FOUND
+[2018-Oct-15 11:23] 127.0.0.1 GET http /? 200 OK
+[2018-Oct-15 11:23] 127.0.0.1 GET http /favicon.ico? 404 NOT FOUND
