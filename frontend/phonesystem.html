@@ -31,6 +31,7 @@
     p,div{font-family: 'Montserrat', sans-serif;}
 
     .text1 {color:#f1f2f2}
+    .div1 {background-color:#f1f2f2}
 
     .button1 {
       position: absolute;
@@ -63,19 +64,33 @@
 <body>
 
 <div class="container-fluid text-center">
+  <div class="row div1">
+    <div class="col-sm-5">
+      <h1 style="color:#4D6371">ANTI-SPYWARE</h1>
+    </div>
+  </div>
+  <div class="row div1">
+    <div class="col-sm-6">
+      <h3 style="color:#32AAC0">What kind of device do you have?</h1>
+    </div>
+    <br><br><br>
+  </div>
+
   <div class="row content">
     <!-- <div class="col-sm-5 sidenav1">
       <h1 class="text1">WELCOME</h1>
       <h2 class="text1">TO ANTI-SPYWARE</h2>
     </div> -->
-    <div class="col-sm-12 sidenav2">
-      <h1 style="color:#4D6371">ANTI-SPYWARE</h1>
-      <p>We will be scanning the applications that are currently on your phone. This is to check whether your personal information is being wrongfully accessed. However, there is no guarantee that we will find anything useful. We will not share the scanned results with any third parties or use them for illegal purposes.</p>
-      <hr>
-      <h3>Test</h3>
-      <button class="button1 text1">NEXT</button>
+    <!-- <div class="col-sm-3 div1"></div> -->
+    <div class="col-sm-5 sidenav2"><img style="width:120px;height:168px;opacity: 0.2;" src="icons/apple.png"></div>
+    <div class="col-sm-2 sidenav2"></div>
+    <div class="col-sm-5 sidenav2">
+    <img style="width:120px;height:168px;opacity: 0.2;" src="icons/android.png">
+    <br><br><br>
+    <button class="button1 text1">NEXT</button>
     </div>
   </div>
+
 </div>
 
 <!-- <footer class="container-fluid text-center">
