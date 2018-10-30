@@ -14,6 +14,7 @@
 
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
     .row.content {height:1000px}
+    .selected {opacity:1}
 
     /* Set gray background color and 100% height */
     .sidenav1 {
@@ -76,17 +77,31 @@
       // Restore the rest ...
    }
 
-   function select(object){
-     object.style.opacity = 1;
+   var clicked = false;
+
+   function firstClick(object){
+     if (clicked == false){
+       object.style.opacity = 1;
+       document.getElementById('next').opacity = 1;
+       object.onmouseout = "";
+       clicked = true;
+     }
+     else{
+       object.style.opacity = .2;
+       object.onmouseout = outStyle(object);
+       clicked = false;
+     }
    }
+
+   // $('apple').on('click', function(){
+   //   $('apple').addClass('selected');
+   //   $(this).removeClass('selected');});
+
 
    function device(object){
      selected = document.getElementById('selected-device');
    }
 
-   function android(){
-     document.getElementById('next').opacity = 1;
-   }
   </script>
 </head>
 <body style="background-color: #f1f2f2">
@@ -110,13 +125,13 @@
       <h2 class="text1">TO ANTI-SPYWARE</h2>
     </div> -->
     <!-- <div class="col-sm-3 div1"></div> -->
-    <div class="col-sm-5 sidenav2"><a id="apple" style="opacity:.2" onmouseover="overStyle(this)" onmouseout="outStyle(this)" onclick="select(this)"><img style="width:120px;height:168px;" src="icons/apple.png"></a></div>
+    <div class="col-sm-5 sidenav2"><a id="apple" style="opacity:.2" onclick="firstClick(this)" onmouseover="overStyle(this)" onmouseout="outStyle(this)" onclick="select(this)"><img style="width:120px;height:168px;" src="icons/apple.png"></a></div>
     <div class="col-sm-2 sidenav2"></div>
     <div class="col-sm-5 sidenav2"><a id="android" onclick="android()" style="opacity:.2" onmouseover="overStyle(this)" onmouseout="outStyle(this)">
     <img style="width:120px;height:168px;" src="icons/android.png"></a>
     <br><br><br>
     <select>
-    <option value="" style="background:url(icons/apple.png);"></option></select>
+    <option src="icons/apple.png"></option></select>
     </div>
   </div>
   <br><br><br><br><br><br>
