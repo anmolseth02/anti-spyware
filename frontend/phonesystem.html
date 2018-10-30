@@ -83,9 +83,13 @@
    function device(object){
      selected = document.getElementById('selected-device');
    }
+
+   function android(){
+     document.getElementById('next').opacity = 1;
+   }
   </script>
 </head>
-<body>
+<body style="background-color: #f1f2f2">
 
 <div class="container-fluid text-center">
   <div class="row div1">
@@ -100,7 +104,7 @@
     <br><br><br>
   </div>
 
-  <div class="row content">
+  <div class="row div1">
     <!-- <div class="col-sm-5 sidenav1">
       <h1 class="text1">WELCOME</h1>
       <h2 class="text1">TO ANTI-SPYWARE</h2>
@@ -108,15 +112,15 @@
     <!-- <div class="col-sm-3 div1"></div> -->
     <div class="col-sm-5 sidenav2"><a id="apple" href="apple.html" style="opacity:.2" onmouseover="overStyle(this)" onmouseout="outStyle(this)" onclick="select(this)"><img style="width:120px;height:168px;" src="icons/apple.png"></a></div>
     <div class="col-sm-2 sidenav2"></div>
-    <div class="col-sm-5 sidenav2"><a id="android" href="#" style="opacity:.2" onmouseover="overStyle(this)" onmouseout="outStyle(this)">
+    <div class="col-sm-5 sidenav2"><a id="android" onclick="android()" style="opacity:.2" onmouseover="overStyle(this)" onmouseout="outStyle(this)">
     <img style="width:120px;height:168px;" src="icons/android.png"></a>
     <br><br><br>
     <select>
     <option value="" style="background:url(icons/apple.png);"></option></select>
-    <button class="button1 text1" style="opacity:.2">NEXT</button>
     </div>
   </div>
-
+  <div class="row div1"><div class="col-sm-11">
+  <button id="next" class="button1 text1" style="opacity:.2">NEXT</button></div></div>
 </div>
 
 <!-- <footer class="container-fluid text-center">
