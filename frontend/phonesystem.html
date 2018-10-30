@@ -84,34 +84,16 @@
      if (clicked == false){
        object.style.opacity = 1;
        document.getElementById('next').opacity = 1;
-       var temp = object.onmouseout;
-       console.log(object.onmouseout);
        object.onmouseout = function(){};
-       console.log(object.onmouseout);
        clicked = true;
      }
      else{
        object.style.opacity = .2;
        clicked = false;
        object.onmouseout = function(){outStyle(this);};
-       console.log(object.onmouseout);
+       // console.log(object.onmouseout);
      }
    }
-
-   // function ChangeItemAEvent()
-   // {
-   //     document.getElementById("ItemA").onmouseover = function() {ChangeColorBack(this.id)};
-   // }
-
- //   $(document).ready(function(){
- //     $("#next").click(function(){
- //         $("#iphone").html('<img style="width:350px;height:430px;" src="icons/trust.png" >');
- //     });
- // });
-
-   // $('apple').on('click', function(){
-   //   $('apple').addClass('selected');
-   //   $(this).removeClass('selected');});
 
 
    function device(object){
@@ -144,7 +126,7 @@
     <div class="col-sm-5 sidenav2"><a id="apple" style="opacity:.2" onclick="firstClick(this)" onmouseover="overStyle(this)" onmouseout="outStyle(this)" onclick="select(this)">
       <img class="responsive" style="width:120px;height:168px;" src="icons/apple.png"></a></div>
     <div class="col-sm-2 sidenav2"></div>
-    <div class="col-sm-5 sidenav2"><a id="android" onclick="android()" style="opacity:.2" onmouseover="overStyle(this)" onmouseout="outStyle(this)">
+    <div class="col-sm-5 sidenav2"><a id="android" onclick="firstClick(this)" style="opacity:.2" onmouseover="overStyle(this)" onmouseout="outStyle(this)">
     <img style="width:120px;height:168px;" src="icons/android.png"></a>
     <br><br><br>
     <select>
