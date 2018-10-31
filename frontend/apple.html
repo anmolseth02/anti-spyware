@@ -40,7 +40,7 @@
     .div1 {background-color:#f1f2f2}
 
     .button1 {
-      position: absolute;
+      /* position: absolute; */
       width: 142px;
       height: 26px;
       /* left: 913px;
@@ -69,7 +69,7 @@
 
 
 </head>
-<body>
+<body style="background-color: #f1f2f2">
   <script>
   $(document).ready(function(){
     $("#next").click(function(){
@@ -98,7 +98,7 @@
   </div>
   <div class="row div1" style="color:"#24333F";font-size:15px" id="caption">Please unlock your device and connect to the USB.</div>
 
-  <div class="row content">
+  <div class="">
     <!-- <div class="col-sm-5 sidenav1">
       <h1 class="text1">WELCOME</h1>
       <h2 class="text1">TO ANTI-SPYWARE</h2>
@@ -107,9 +107,10 @@
     <div class="col-sm-5 sidenav2"></div>
     <div class="col-sm-2 sidenav2"></div>
     <div class="col-sm-5 sidenav2">
-    <br><br><br>
-    <button class="button1 text1" id="next">NEXT</button>
+
     </div>
+    <div style="text-align:center;padding-top:50px">
+    <button id="next" class="button1 text1 disabled">NEXT</button></div>
   </div>
 
 </div>
