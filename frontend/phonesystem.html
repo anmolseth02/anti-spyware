@@ -14,7 +14,7 @@
 
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
     .row.content {height:1000px}
-    .selected {opacity:1}
+    .disabled {opacity:.2}
     .responsive {height:auto; width:100%;}
 
     /* Set gray background color and 100% height */
@@ -78,26 +78,45 @@
       // Restore the rest ...
    }
 
-   var clicked = false;
+   var clicked1 = false;
+   var clicked2 = false;
+   var device = 0;
 
    function firstClick(object){
-     if (clicked == false){
+     if (clicked1 == false){
        object.style.opacity = 1;
        document.getElementById('next').opacity = 1;
        object.onmouseout = function(){};
-       clicked = true;
+       clicked1 = true;
+       device = 1;
+       document.getElementById("next").classList.remove("disabled");
+       document.getElementById("next").setAttribute("onClick","window.location='apple.html'");
      }
      else{
        object.style.opacity = .2;
-       clicked = false;
+       clicked1 = false;
        object.onmouseout = function(){outStyle(this);};
        // console.log(object.onmouseout);
+       device = 0;
+       document.getElementById("next").setAttribute("onClick","");
+       document.getElementById("next").classList.add("disabled");
      }
    }
 
-
-   function device(object){
-     selected = document.getElementById('selected-device');
+   function secondClick(object){
+     if (clicked2 == false){
+       object.style.opacity = 1;
+       // document.getElementById('next').opacity = 1;
+       object.onmouseout = function(){};
+       clicked2 = true;
+       device = 2;
+     }
+     else{
+       object.style.opacity = .2;
+       clicked2 = false;
+       object.onmouseout = function(){outStyle(this);};
+       device = 0;
+     }
    }
 
   </script>
@@ -114,7 +133,7 @@
     <div class="col-sm-6">
       <h3 style="color:#32AAC0">What kind of device do you have?</h3>
     </div>
-    <br><br><br>
+    <br><br><br><br><br><br>
   </div>
 
   <div class="row div1">
@@ -126,7 +145,7 @@
     <div class="col-sm-5 sidenav2"><a id="apple" style="opacity:.2" onclick="firstClick(this)" onmouseover="overStyle(this)" onmouseout="outStyle(this)" onclick="select(this)">
       <img class="responsive" style="width:120px;height:168px;" src="icons/apple.png"></a></div>
     <div class="col-sm-2 sidenav2"></div>
-    <div class="col-sm-5 sidenav2"><a id="android" onclick="firstClick(this)" style="opacity:.2" onmouseover="overStyle(this)" onmouseout="outStyle(this)">
+    <div class="col-sm-5 sidenav2"><a id="android" onclick="secondClick(this)" style="opacity:.2" onmouseover="overStyle(this)" onmouseout="outStyle(this)">
     <img style="width:120px;height:168px;" src="icons/android.png"></a>
     <br><br><br>
     <select>
@@ -135,7 +154,7 @@
   </div>
   <br><br><br><br><br><br>
   <div class="row div1"><div class="col-sm-11">
-  <button id="next" onclick="window.location='apple.html'" class="button1 text1" style="opacity:.2">NEXT</button></div></div>
+  <button id="next" class="button1 text1 disabled">NEXT</button></div></div>
 </div>
 
 <!-- <footer class="container-fluid text-center">
