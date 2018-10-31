@@ -17,6 +17,10 @@
     .disabled {opacity:.2}
     .responsive {height:auto; width:100%;}
 
+    .evensplit {flex:1}
+
+    .imgpad {padding-left:50px}
+
     /* Set gray background color and 100% height */
     .sidenav1 {
       padding-top: 0px;
@@ -39,7 +43,7 @@
     .div1 {background-color:#f1f2f2}
 
     .button1 {
-      position: absolute;
+      /* position: absolute; */
       width: 142px;
       height: 26px;
       /* left: 913px;
@@ -85,11 +89,17 @@
    function firstClick(object){
      if (clicked1 == false){
        object.style.opacity = 1;
-       document.getElementById('next').opacity = 1;
        object.onmouseout = function(){};
        clicked1 = true;
        device = 1;
-       document.getElementById("next").classList.remove("disabled");
+       if (clicked2 == false){
+         document.getElementById("next").classList.remove("disabled");
+       }
+       else{
+         clicked2 = false;
+         object.style.opacity = .2;
+         object.onmouseout = function(){outStyle(this);};
+       }
        document.getElementById("next").setAttribute("onClick","window.location='apple.html'");
      }
      else{
@@ -106,7 +116,6 @@
    function secondClick(object){
      if (clicked2 == false){
        object.style.opacity = 1;
-       // document.getElementById('next').opacity = 1;
        object.onmouseout = function(){};
        clicked2 = true;
        device = 2;
@@ -130,32 +139,29 @@
     </div>
   </div>
   <div class="row div1">
-    <div class="col-sm-6">
+    <div class="col-sm-6" style="margin-bottom:50px">
       <h3 style="color:#32AAC0">What kind of device do you have?</h3>
     </div>
-    <br><br><br><br><br><br>
   </div>
 
-  <div class="row div1">
+  <div class="evensplit">
     <!-- <div class="col-sm-5 sidenav1">
       <h1 class="text1">WELCOME</h1>
       <h2 class="text1">TO ANTI-SPYWARE</h2>
     </div> -->
     <!-- <div class="col-sm-3 div1"></div> -->
-    <div class="col-sm-5 sidenav2"><a id="apple" style="opacity:.2" onclick="firstClick(this)" onmouseover="overStyle(this)" onmouseout="outStyle(this)" onclick="select(this)">
-      <img class="responsive" style="width:120px;height:168px;" src="icons/apple.png"></a></div>
-    <div class="col-sm-2 sidenav2"></div>
-    <div class="col-sm-5 sidenav2"><a id="android" onclick="secondClick(this)" style="opacity:.2" onmouseover="overStyle(this)" onmouseout="outStyle(this)">
+    <a id="apple" style="opacity:.2;padding-right:35px" onclick="firstClick(this)" onmouseover="overStyle(this)" onmouseout="outStyle(this)" onclick="select(this)">
+      <img class="responsive" style="width:120px;height:168px;" src="icons/apple.png"></a>
+    <!-- <div class="col-sm-2 sidenav2"></div> -->
+    <a id="android" onclick="secondClick(this)" style="opacity:.2;padding-left:35px" onmouseover="overStyle(this)" onmouseout="outStyle(this)">
     <img style="width:120px;height:168px;" src="icons/android.png"></a>
-    <br><br><br>
-    <select>
-    <option src="icons/apple.png"></option></select>
+
     </div>
   </div>
-  <br><br><br><br><br><br>
-  <div class="row div1"><div class="col-sm-11">
-  <button id="next" class="button1 text1 disabled">NEXT</button></div></div>
-</div>
+
+  <div style="text-align:center;padding-top:50px">
+  <button id="next" class="button1 text1 disabled">NEXT</button></div>
+
 
 <!-- <footer class="container-fluid text-center">
   <p>Footer Text</p>
