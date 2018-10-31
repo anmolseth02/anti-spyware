@@ -97,8 +97,8 @@
        }
        else{
          clicked2 = false;
-         object.style.opacity = .2;
-         object.onmouseout = function(){outStyle(this);};
+         document.getElementById("android").style.opacity = .2;
+         document.getElementById("android").onmouseout = function(){outStyle(this);};
        }
        document.getElementById("next").setAttribute("onClick","window.location='apple.html'");
      }
@@ -119,6 +119,7 @@
        object.onmouseout = function(){};
        clicked2 = true;
        device = 2;
+       document.getElementById("next").classList.remove("disabled");
      }
      else{
        object.style.opacity = .2;
@@ -155,7 +156,6 @@
     <!-- <div class="col-sm-2 sidenav2"></div> -->
     <a id="android" onclick="secondClick(this)" style="opacity:.2;padding-left:35px" onmouseover="overStyle(this)" onmouseout="outStyle(this)">
     <img style="width:120px;height:168px;" src="icons/android.png"></a>
-
     </div>
   </div>
 
