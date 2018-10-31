@@ -119,13 +119,23 @@
        object.onmouseout = function(){};
        clicked2 = true;
        device = 2;
-       document.getElementById("next").classList.remove("disabled");
+       if (clicked1 == false){
+         document.getElementById("next").classList.remove("disabled");
+       }
+       else{
+         clicked1 = false;
+         document.getElementById("apple").style.opacity = .2;
+         document.getElementById("apple").onmouseout = function(){outStyle(this);};
+       }
+       document.getElementById("next").setAttribute("onClick","window.location='android.html'");
      }
      else{
        object.style.opacity = .2;
        clicked2 = false;
        object.onmouseout = function(){outStyle(this);};
        device = 0;
+       document.getElementById("next").setAttribute("onClick","");
+       document.getElementById("next").classList.add("disabled");
      }
    }
 
