@@ -82,6 +82,9 @@
     $("#next").click(function(){
         $("#iphone").html('<img style="width:778px;height:390px;" src="icons/androidconnect.png" >');
         $("#caption").html('Please unlock your device and connect to the USB.');
+        document.getElementById("devtext1").style = '';
+        // document.getElementById("devtext2").style = '';
+        document.getElementById("devtext2").innerHTML = '';
     });
     // $("prev").click(function(){
     //
@@ -101,17 +104,18 @@
     </div>
   </div>
   <div style="display:flex">
-    <div class="devtext" style="flex:1;">
-      <div style="height:429px;font-size:22px;text-align:left"><b>Activate Developer Mode:</b><br><br>
-1. Open the Settings.<br>
-2. Select System. (Only on Android 8.0 or higher)<br>
-3. Scroll to the bottom and select About device.<br>
-4. Scroll to the bottom and tap Build number 7 times.<br>
-5. Return to the previous screen to find Developer options near the bottom and turn it on.</div>
+    <div id="devtext1" class="devtext" style="flex:1;">
+      <div id="devtext2" style="height:429px;font-size:22px;text-align:left"><b>Activate Developer Mode:</b><br><br>
+      1. Open the Settings.<br>
+      2. Select System. (Only on Android 8.0 or higher)<br>
+      3. Scroll to the bottom and select About device.<br>
+      4. Scroll to the bottom and tap Build number 7 times.<br>
+      5. Return to the previous screen to find Developer options near the bottom and turn it on.</div>
 <div style="padding-top:25px"><button id="prev" onclick="window.location = 'phonesystem.html'" class="button1 text1">PREVIOUS</button></div>
 </div>
-    <div style="flex:1;padding-bottom:20px" id="iphone">
-      <img style="width:224px;height:464px;" src="icons/devmode.png" >
+    <div style="flex:1;padding-bottom:20px">
+      <div id="iphone">
+      <img style="width:224px;height:464px;" src="icons/devmode.png" ></div>
       <div style="text-align:center;padding-top:25px">
       <button id="next" class="button1 text1">NEXT</button></div>
       </div>

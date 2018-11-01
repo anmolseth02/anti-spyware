@@ -40,14 +40,12 @@
     .div1 {background-color:#f1f2f2}
 
     .button1 {
-      /* position: absolute; */
-      width: 142px;
-      height: 26px;
-      /* left: 913px;
-      top: 707px; */
+      width: 154px;
+      height: 37px;
       text-align: center;
       background: #32AAC0;
       border-radius: 5px;
+      font-size: 18px;
     }
 
     /* Set black background color, white text and some padding */
@@ -75,6 +73,8 @@
     $("#next").click(function(){
         $("#iphone").html('<img style="width:350px;height:430px;" src="icons/trust.png" >');
         $("#caption").html('Click on “Trust This Computer” on your device.');
+        // $("next").html('SCAN');
+        document.getElementById("next").innerHTML = 'SCAN';
     });
 });
 
@@ -97,9 +97,10 @@
   </div>
   <div style="flex:1;color:#24333F;font-size:18px;" id="caption">Please unlock your device and connect to the USB.</div>
 
-  <div class="">
-
-    <div style="text-align:center;padding-top:50px">
+  <div style="display:flex">
+    <div style="text-align:center;padding-top:35px;flex:1">
+    <button id="prev" class="button1 text1 disabled">PREVIOUS</button></div>
+    <div style="text-align:center;padding-top:35px;flex:1">
     <button id="next" class="button1 text1 disabled">NEXT</button></div>
   </div>
 
