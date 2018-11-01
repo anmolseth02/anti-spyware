@@ -88,9 +88,10 @@
           counter = 1;
         }
         else if (counter == 1){
-          $("#iphone").html('<img style="width:778px;height:390px;" src="icons/androidconnect.png" >');
-          $("#caption").html('Please unlock your device and connect to the USB.');
+          $("#iphone").html('<img style="width:778px;height:390px;" src="icons/androidconnect.png" ><br>Please unlock your device and connect to the USB.');
+          // $("#devtext2").html('Please unlock your device and connect to the USB.');
           document.getElementById("devtext1").style = '';
+          document.getElementById("devtext2").style = '';
           document.getElementById("devtext2").innerHTML = '';
           document.getElementById("next").innerHTML = 'SCAN';
           counter = 2;
