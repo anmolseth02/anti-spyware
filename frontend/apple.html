@@ -69,13 +69,31 @@
 </head>
 <body style="background-color: #f1f2f2">
   <script>
+
+  var counter = 0;
+
   $(document).ready(function(){
     $("#next").click(function(){
+      if (counter == 0){
         $("#iphone").html('<img style="width:350px;height:430px;" src="icons/trust.png" >');
         $("#caption").html('Click on “Trust This Computer” on your device.');
-        // $("next").html('SCAN');
+        counter = 1;
         document.getElementById("next").innerHTML = 'SCAN';
         document.getElementById("next").setAttribute("onClick","window.location='result.html'");
+      }
+
+    });
+
+    $("#prev").click(function(){
+      if (counter == 1){
+        document.getElementById("next").innerHTML = 'NEXT';
+        $("#iphone").html('<img style="width:450px;height:450px;" src="icons/iphoneplug.png" >');
+        document.getElementById("prev").setAttribute("onClick","window.location='phonesystem.html'");
+        counter = 0;
+      }
+      else if (counter == 0){
+        window.location.assign("phonesystem.html");
+      }
     });
 });
 
@@ -100,9 +118,9 @@
 
   <div style="display:flex">
     <div style="text-align:center;padding-top:25px;flex:1">
-    <button id="prev" class="button1 text1 disabled">PREVIOUS</button></div>
+    <button id="prev" class="button1 text1">PREVIOUS</button></div>
     <div style="text-align:center;padding-top:25px;flex:1">
-    <button id="next" class="button1 text1 disabled">NEXT</button></div>
+    <button id="next" class="button1 text1">NEXT</button></div>
   </div>
 
 </div>
