@@ -91,9 +91,9 @@ def instruction():
     device = request.form.get('device_type')
     print("Device ------------>",device)
     if(device == "apple"):
-        return render_template('apple.html')
+        return render_template('apple_instructions.html')
     elif(device == "android"):
-        return render_template('android.html')
+        return render_template('android_instructions.html')
     else:
         return render_template('phonesystem.html')
     return render_template('phonesystem.html')

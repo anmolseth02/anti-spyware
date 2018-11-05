@@ -75,7 +75,7 @@
   $(document).ready(function(){
     $("#next").click(function(){
       if (counter == 0){
-        $("#iphone").html('<img style="width:350px;height:430px;" src="icons/trust.png" >');
+        $("#iphone").html('<img style="width:350px;height:430px;" src="{{ url_for('static', filename='images/trust.png') }}" >');
         $("#caption").html('Click on “Trust This Computer” on your device.');
         counter = 1;
         document.getElementById("next").innerHTML = 'SCAN';
@@ -87,12 +87,12 @@
     $("#prev").click(function(){
       if (counter == 1){
         document.getElementById("next").innerHTML = 'NEXT';
-        $("#iphone").html('<img style="width:450px;height:450px;" src="icons/iphoneplug.png" >');
+        $("#iphone").html('<img style="width:450px;height:450px;" src="{{ url_for('static', filename='images/iphoneplug.png') }}" >');
         document.getElementById("prev").setAttribute("onClick","window.location='phonesystem.html'");
         counter = 0;
       }
       else if (counter == 0){
-        window.location.assign("phonesystem.html");
+        window.location.assign("phonesystem");
       }
     });
 });

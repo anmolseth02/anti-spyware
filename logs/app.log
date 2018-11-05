@@ -667,3 +667,74 @@
 [2018-Nov-05 14:36] 127.0.0.1 GET http /phonesystem? 200 OK
 [2018-Nov-05 16:51] 127.0.0.1 GET http /? 200 OK
 [2018-Nov-05 16:51] 127.0.0.1 GET http /phonesystem? 200 OK
+[2018-Nov-05 17:21] 127.0.0.1 GET http /? 200 OK
+[2018-Nov-05 17:21] 127.0.0.1 GET http /phonesystem? 200 OK
+[2018-Nov-05 17:21] 127.0.0.1 POST http /instruction? 200 OK
+[2018-Nov-05 17:21] 127.0.0.1 GET http /webstatic/images/iphoneplug.png? 200 OK
+[2018-Nov-05 17:21] 127.0.0.1 GET http /icons/trust.png? 404 NOT FOUND
+[2018-Nov-05 17:21] 127.0.0.1 GET http /result.html? 404 NOT FOUND
+[2018-Nov-05 17:21] 127.0.0.1 POST http /instruction? 200 OK
+[2018-Nov-05 17:21] 127.0.0.1 GET http /icons/devmode.png? 404 NOT FOUND
+[2018-Nov-05 17:21] 127.0.0.1 GET http /icons/debug.png? 404 NOT FOUND
+[2018-Nov-05 17:21] 127.0.0.1 GET http /icons/androidconnect.png? 404 NOT FOUND
+[2018-Nov-05 17:21] 127.0.0.1 GET http /icons/debug.png? 404 NOT FOUND
+[2018-Nov-05 17:21] 127.0.0.1 GET http /icons/devmode.png? 404 NOT FOUND
+[2018-Nov-05 17:21] 127.0.0.1 GET http /phonesystem.html? 404 NOT FOUND
+[2018-Nov-05 17:21] 127.0.0.1 GET http /? 200 OK
+[2018-Nov-05 17:21] 127.0.0.1 GET http /phonesystem? 200 OK
+[2018-Nov-05 17:22] 127.0.0.1 GET http /? 200 OK
+[2018-Nov-05 17:27] 127.0.0.1 GET http /phonesystem? 200 OK
+[2018-Nov-05 17:27] 127.0.0.1 POST http /instruction? 200 OK
+[2018-Nov-05 17:27] 127.0.0.1 GET http /icons/trust.png? 404 NOT FOUND
+[2018-Nov-05 17:28] 127.0.0.1 GET http /icons/iphoneplug.png? 404 NOT FOUND
+[2018-Nov-05 17:28] 127.0.0.1 GET http /phonesystem.html? 404 NOT FOUND
+[2018-Nov-05 17:32] 127.0.0.1 GET http /? 200 OK
+[2018-Nov-05 17:32] 127.0.0.1 GET http /phonesystem? 200 OK
+[2018-Nov-05 17:32] 127.0.0.1 POST http /instruction? 200 OK
+[2018-Nov-05 17:32] 127.0.0.1 GET http /icons/trust.png? 404 NOT FOUND
+[2018-Nov-05 17:33] 127.0.0.1 GET http /icons/iphoneplug.png? 404 NOT FOUND
+[2018-Nov-05 17:33] 127.0.0.1 GET http /phonesystem.html? 404 NOT FOUND
+[2018-Nov-05 17:33] 127.0.0.1 GET http /? 200 OK
+[2018-Nov-05 17:33] 127.0.0.1 GET http /phonesystem? 200 OK
+[2018-Nov-05 17:33] 127.0.0.1 POST http /instruction? 200 OK
+[2018-Nov-05 17:44] 127.0.0.1 GET http /? 200 OK
+[2018-Nov-05 17:44] 127.0.0.1 GET http /favicon.ico? 404 NOT FOUND
+[2018-Nov-05 17:44] 127.0.0.1 GET http /phonesystem? 200 OK
+[2018-Nov-05 17:46] 127.0.0.1 GET http /? 200 OK
+[2018-Nov-05 17:46] 127.0.0.1 GET http /favicon.ico? 404 NOT FOUND
+[2018-Nov-05 17:46] 127.0.0.1 GET http /phonesystem? 200 OK
+[2018-Nov-05 17:46] 127.0.0.1 POST http /instruction? 200 OK
+[2018-Nov-05 17:46] 127.0.0.1 GET http /icons/trust.png? 404 NOT FOUND
+[2018-Nov-05 17:46] 127.0.0.1 GET http /icons/iphoneplug.png? 404 NOT FOUND
+[2018-Nov-05 17:46] 127.0.0.1 GET http /phonesystem.html? 404 NOT FOUND
+[2018-Nov-05 17:47] 127.0.0.1 GET http /icons/trust.png? 404 NOT FOUND
+[2018-Nov-05 17:47] 127.0.0.1 GET http /icons/iphoneplug.png? 404 NOT FOUND
+[2018-Nov-05 17:47] 127.0.0.1 POST http /instruction? 200 OK
+[2018-Nov-05 17:47] 127.0.0.1 GET http /webstatic/images/iphoneplug.png? 200 OK
+[2018-Nov-05 17:47] 127.0.0.1 GET http /favicon.ico? 404 NOT FOUND
+[2018-Nov-05 17:51] 127.0.0.1 POST http /instruction? 200 OK
+[2018-Nov-05 17:51] 127.0.0.1 GET http /webstatic/images/iphoneplug.png? 200 OK
+[2018-Nov-05 17:51] 127.0.0.1 GET http /favicon.ico? 404 NOT FOUND
+[2018-Nov-05 17:51] 127.0.0.1 GET http /images/trust.png? 404 NOT FOUND
+[2018-Nov-05 17:51] 127.0.0.1 GET http /images/iphoneplug.png? 404 NOT FOUND
+[2018-Nov-05 17:57] 127.0.0.1 GET http /? 200 OK
+[2018-Nov-05 17:57] 127.0.0.1 GET http /favicon.ico? 404 NOT FOUND
+[2018-Nov-05 17:57] 127.0.0.1 GET http /phonesystem? 200 OK
+[2018-Nov-05 17:58] 127.0.0.1 GET http /? 200 OK
+[2018-Nov-05 17:58] 127.0.0.1 GET http /phonesystem? 200 OK
+[2018-Nov-05 17:58] 127.0.0.1 POST http /instruction? 200 OK
+[2018-Nov-05 17:58] 127.0.0.1 GET http /webstatic/images/trust.png? 200 OK
+[2018-Nov-05 17:59] 127.0.0.1 GET http /result.html? 404 NOT FOUND
+[2018-Nov-05 17:59] 127.0.0.1 GET http /phonesystem.html? 404 NOT FOUND
+[2018-Nov-05 17:59] 127.0.0.1 POST http /instruction? 200 OK
+[2018-Nov-05 17:59] 127.0.0.1 GET http /webstatic/images/iphoneplug.png? 200 OK
+[2018-Nov-05 17:59] 127.0.0.1 GET http /favicon.ico? 404 NOT FOUND
+[2018-Nov-05 17:59] 127.0.0.1 GET http /result.html? 404 NOT FOUND
+[2018-Nov-05 17:59] 127.0.0.1 GET http /phonesystem? 200 OK
+[2018-Nov-05 17:59] 127.0.0.1 POST http /instruction? 200 OK
+[2018-Nov-05 17:59] 127.0.0.1 GET http /result.html? 404 NOT FOUND
+[2018-Nov-05 17:59] 127.0.0.1 GET http /phonesystem? 200 OK
+[2018-Nov-05 18:00] 127.0.0.1 GET http /phonesystem? 200 OK
+[2018-Nov-05 18:00] 127.0.0.1 POST http /instruction? 200 OK
+[2018-Nov-05 18:00] 127.0.0.1 GET http /icons/devmode.png? 404 NOT FOUND
+[2018-Nov-05 18:00] 127.0.0.1 GET http /icons/debug.png? 404 NOT FOUND
