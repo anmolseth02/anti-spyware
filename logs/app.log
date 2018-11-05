@@ -667,3 +667,50 @@
 [2018-Nov-05 14:36] 127.0.0.1 GET http /phonesystem? 200 OK
 [2018-Nov-05 16:51] 127.0.0.1 GET http /? 200 OK
 [2018-Nov-05 16:51] 127.0.0.1 GET http /phonesystem? 200 OK
+[2018-Nov-05 17:29] 127.0.0.1 GET http /? 200 OK
+[2018-Nov-05 17:29] 127.0.0.1 GET http /favicon.ico? 404 NOT FOUND
+[2018-Nov-05 17:29] 127.0.0.1 GET http /phonesystem? 200 OK
+[2018-Nov-05 17:29] 127.0.0.1 GET http /webstatic/images/android.png? 200 OK
+[2018-Nov-05 17:29] 127.0.0.1 GET http /webstatic/images/apple.png? 200 OK
+[2018-Nov-05 17:29] 127.0.0.1 POST http /instruction? 200 OK
+[2018-Nov-05 17:29] 127.0.0.1 GET http /webstatic/images/devmode.png? 200 OK
+[2018-Nov-05 17:31] 127.0.0.1 GET http /icons/debug.png? 404 NOT FOUND
+[2018-Nov-05 17:31] 127.0.0.1 GET http /icons/devmode.png? 404 NOT FOUND
+[2018-Nov-05 17:31] 127.0.0.1 GET http /instruction? 405 METHOD NOT ALLOWED
+[2018-Nov-05 17:31] 127.0.0.1 GET http /? 200 OK
+[2018-Nov-05 17:31] 127.0.0.1 GET http /phonesystem? 200 OK
+[2018-Nov-05 17:31] 127.0.0.1 POST http /instruction? 200 OK
+[2018-Nov-05 17:31] 127.0.0.1 GET http /icons/debug.png? 404 NOT FOUND
+[2018-Nov-05 17:31] 127.0.0.1 GET http /icons/androidconnect.png? 404 NOT FOUND
+[2018-Nov-05 17:31] 127.0.0.1 GET http /webstatic/images/debug.png? 200 OK
+[2018-Nov-05 17:31] 127.0.0.1 GET http /icons/debug.png? 404 NOT FOUND
+[2018-Nov-05 17:32] 127.0.0.1 GET http /icons/debug.png? 404 NOT FOUND
+[2018-Nov-05 17:32] 127.0.0.1 GET http /icons/androidconnect.png? 404 NOT FOUND
+[2018-Nov-05 17:32] 127.0.0.1 GET http /icons/debug.png? 404 NOT FOUND
+[2018-Nov-05 17:32] 127.0.0.1 GET http /instruction? 405 METHOD NOT ALLOWED
+[2018-Nov-05 17:32] 127.0.0.1 GET http /? 200 OK
+[2018-Nov-05 17:32] 127.0.0.1 GET http /phonesystem? 200 OK
+[2018-Nov-05 17:32] 127.0.0.1 POST http /instruction? 200 OK
+[2018-Nov-05 17:32] 127.0.0.1 GET http /icons/debug.png? 404 NOT FOUND
+[2018-Nov-05 17:32] 127.0.0.1 GET http /icons/debug.png? 404 NOT FOUND
+[2018-Nov-05 17:32] 127.0.0.1 GET http /icons/androidconnect.png? 404 NOT FOUND
+[2018-Nov-05 17:33] 127.0.0.1 GET http /icons/debug.png? 404 NOT FOUND
+[2018-Nov-05 17:33] 127.0.0.1 GET http /icons/androidconnect.png? 404 NOT FOUND
+[2018-Nov-05 17:34] 127.0.0.1 GET http /icons/androidconnect.png? 404 NOT FOUND
+[2018-Nov-05 17:34] 127.0.0.1 GET http /icons/debug.png? 404 NOT FOUND
+[2018-Nov-05 17:34] 127.0.0.1 GET http /icons/debug.png? 404 NOT FOUND
+[2018-Nov-05 17:34] 127.0.0.1 GET http /icons/debug.png? 404 NOT FOUND
+[2018-Nov-05 17:34] 127.0.0.1 GET http /icons/androidconnect.png? 404 NOT FOUND
+[2018-Nov-05 17:35] 127.0.0.1 GET http /? 200 OK
+[2018-Nov-05 17:35] 127.0.0.1 GET http /phonesystem? 200 OK
+[2018-Nov-05 17:35] 127.0.0.1 POST http /instruction? 200 OK
+[2018-Nov-05 17:35] 127.0.0.1 GET http /webstatic/images/androidconect.png? 404 NOT FOUND
+[2018-Nov-05 17:35] 127.0.0.1 GET http /webstatic/images/androidconect.png? 404 NOT FOUND
+[2018-Nov-05 17:35] 127.0.0.1 GET http /? 200 OK
+[2018-Nov-05 17:35] 127.0.0.1 GET http /phonesystem? 200 OK
+[2018-Nov-05 17:36] 127.0.0.1 POST http /instruction? 200 OK
+[2018-Nov-05 17:36] 127.0.0.1 GET http /webstatic/images/androidconect.png? 404 NOT FOUND
+[2018-Nov-05 17:36] 127.0.0.1 GET http /? 200 OK
+[2018-Nov-05 17:36] 127.0.0.1 GET http /phonesystem? 200 OK
+[2018-Nov-05 17:36] 127.0.0.1 POST http /instruction? 200 OK
+[2018-Nov-05 17:36] 127.0.0.1 GET http /webstatic/images/androidconnect.png? 200 OK
