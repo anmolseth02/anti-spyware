@@ -7,41 +7,68 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script>
-
-
-        function proceed_to_scan(m) {
-          alert("Anmol Seth")
-        }
-    </script>
-
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <style>
     /* Remove the navbar's default margin-bottom and rounded borders */
 
 
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height:1000px;auto;100%;}
+    /* .row.content {height:1000px;auto;100%;} */
 
     /* Set gray background color and 100% height */
-    .sidenav1 {
-      padding-top: 0px;
-      background-color: #4D6371;
+    body,html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
       height: 100%;
     }
 
+    .sidenav1 {
+      /* padding-top: 0px; */
+      background-color: #4D6371;
+      height: 100%;
+      flex:642;
+    }
+
     .sidenav2 {
-      padding-top: 0px;
+      /* padding-top: 0px;
+      padding-bottom: 0px; */
       background-color: #f1f2f2;
       height: 100%;
+      flex:798;
     }
 
     p,div{font-family: 'Montserrat', sans-serif;}
 
     .text1 {color:#f1f2f2}
 
+    .welcome {
+      padding-left:50px;
+      font-size: 36px;
+    }
+
+    .anti {
+      padding-left:50px;
+      font-size: 30px;
+    }
+
+    .disclaimer{
+      font-size:40px;
+      text-align: center;
+      padding-top:50px;
+      padding-bottom:30px;
+    }
+
+    .distext{
+      text-align:left;
+      font-size: 22px;
+      padding-left:70px;
+      padding-right:70px;
+      padding-bottom:30px;
+    }
+
     .button1 {
-      position: absolute;
+      /* position: absolute; */
       width: 142px;
       height: 26px;
       /* left: 913px;
@@ -62,52 +89,42 @@
     @media screen and () {
       .sidenav {
         height: auto;
-        padding: 15px;
+        padding: 0px;
       }
       .row.content {height:auto;}
     }
   </style>
+
+  <script>
+    function proceed(){
+      var cc = document.getElementById("agree").checked;
+      // console.log(cc);
+      if (cc == true){
+        window.location.assign('phonesystem');
+        // document.getElementById("scan").setAttribute("onClick","window.location='phonesystem.html'");
+      }
+    }
+
+  </script>
 </head>
 <body>
 
-<!-- <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Logo</a>
+<div style="display:flex;width:100%;height:100%;" class="row content">
+  <!-- <div class="row content"> -->
+    <div class="sidenav1">
+      <div class="text1 welcome" style="padding-top:50px">WELCOME</div>
+      <div class="text1 anti">TO ANTI-SPYWARE</div>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
+    <!-- <div class="col-sm-1 sidenav2"></div> -->
+    <div class="sidenav2">
+      <div class="disclaimer">DISCLAIMER</div>
+      <p class="distext">We will be scanning the applications that are currently on your phone. This is to check whether your personal information is being wrongfully accessed. However, there is no guarantee that we will find anything useful. We will not share the scanned results with any third parties or use them for illegal purposes.</p>
+      <div style="text-align:center">
+      <p style="font-size:18px"><input id="agree" type="checkbox" name="vehicle1"> I agree to get my phone scanned.</p><br>
+      <button class="button1 text1" id="scan" onclick="proceed()">Proceed to Scan</button></div>
     </div>
-  </div>
-</nav> -->
-
-<div class="container-fluid text-center">
-  <div class="row content">
-    <div class="col-sm-5 sidenav1">
-      <h1 class="text1">WELCOME</h1>
-      <h2 class="text1">TO ANTI-SPYWARE</h2>
-    </div>
-    <div class="col-sm-7 sidenav2">
-      <h1>DISCLAIMER</h1>
-      <p>We will be scanning the applications that are currently on your phone. This is to check whether your personal information is being wrongfully accessed. However, there is no guarantee that we will find anything useful. We will not share the scanned results with any third parties or use them for illegal purposes.</p>
-      <hr>
-      <h3>Test</h3>
-      <button id ="proceed" onclick="proceed_to_scan()" class="button1 text1">Proceed to Scan</button>
-    </div>
-  </div>
+    <!-- <div class="col-sm-1 sidenav2"></div> -->
+  <!-- </div> -->
 </div>
 
 <!-- <footer class="container-fluid text-center">

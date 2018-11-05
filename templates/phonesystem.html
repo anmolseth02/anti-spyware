@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+        .row.content {
+            height: 1000px
+        }
+        .disabled {
+            opacity: .2
+        }
+        .responsive {
+            height: auto;
+            width: 100%;
+        }
+        .evensplit {
+            flex: 1
+        }
+        .imgpad {
+            padding-left: 50px
+        }
+        /* Set gray background color and 100% height */
+        .sidenav1 {
+            padding-top: 0px;
+            background-color: #4D6371;
+            height: 100%;
+        }
+        .sidenav2 {
+            padding-top: 0px;
+            background-color: #f1f2f2;
+            height: 100%;
+        }
+        p, div {
+            font-family: 'Montserrat', sans-serif;
+        }
+        /* div.ex1:hover, div.ex1:active {opacity:1;} */
+        /* div.ex1{width:120px;height:168px;} */
+        .text1 {
+            color: #f1f2f2
+        }
+        .div1 {
+            background-color: #f1f2f2
+        }
+        .button1 {
+            width: 154px;
+            height: 37px;
+            text-align: center;
+            background: #32AAC0;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        /* Set black background color, white text and some padding */
+        /* footer {
+        background-color: #555;
+        color: white;
+        padding: 15px;
+        } */
+        /* On small screens, set height to 'auto' for sidenav and grid */
+        @media screen and () {
+            .sidenav {
+                height: auto;
+                /* padding: 15px; */
+            }
+            .row.content {
+                height: auto;
+                100%
+            }
+        }
+        img {
+            opacity: .2;
+        }
+        img:hover {
+            opacity: 1;
+        }
+        .device_image {
+            width: 144px;
+            height: 201px;
+            opacity: .2;
+        }
+        .input-hidden {
+            position: absolute;
+            left: -9999px;
+        }
+        input[type=radio]:checked + label > img {
+            opacity: 1;
+            border: 1px solid #fff;
+            box-shadow: 0 0 3px 3px #000;
+        }
+    </style>
+    <script>
+        function overStyle(object) {
+            object.style.opacity = 1;
+            // Change some other properties ...
+        }
+
+        /** Restores the style **/
+        function outStyle(object) {
+            object.style.opacity = .2;
+            // Restore the rest ...
+        }
+
+        var clicked1 = false;
+        var clicked2 = false;
+        var device = 0;
+
+        function firstClick(object) {
+            if (clicked1 == false) {
+                //  alert("1st if")
+                object.style.opacity = 1;
+                object.onmouseout = function () {
+                };
+                clicked1 = true;
+                device = 1;
+                if (clicked2 == false) {
+                    // alert("2nd if")
+                    document.getElementById("next").classList.remove("disabled");
+                }
+                else {
+                    clicked2 = false;
+                    document.getElementById("android").style.opacity = .2;
+                    document.getElementById("android").onmouseout = function () {
+                        outStyle(this);
+                    };
+                }
+                document.getElementById("next").setAttribute("onClick", "window.location='apple.html'");
+            }
+            else {
+                object.style.opacity = .2;
+                clicked1 = false;
+                object.onmouseout = function () {
+                    outStyle(this);
+                };
+                // console.log(object.onmouseout);
+                device = 0;
+                document.getElementById("next").setAttribute("onClick", "");
+                document.getElementById("next").classList.add("disabled");
+            }
+            alert("clicked 1 - ", clicked1)
+            alert("clicked 2 - ", clicked2)
+        }
+
+        function secondClick(object) {
+            if (clicked2 == false) {
+                object.style.opacity = 1;
+                object.onmouseout = function () {
+                };
+                clicked2 = true;
+                device = 2;
+                if (clicked1 == false) {
+                    document.getElementById("next").classList.remove("disabled");
+                }
+                else {
+                    clicked1 = false;
+                    document.getElementById("apple").style.opacity = .2;
+                    document.getElementById("apple").onmouseout = function () {
+                        outStyle(this);
+                    };
+                }
+                document.getElementById("next").setAttribute("onClick", "window.location='android.html'");
+            }
+            else {
+                object.style.opacity = .2;
+                clicked2 = false;
+                object.onmouseout = function () {
+                    outStyle(this);
+                };
+                device = 0;
+                document.getElementById("next").setAttribute("onClick", "");
+                document.getElementById("next").classList.add("disabled");
+            }
+        }
+
+    </script>
+</head>
+<body style="background-color: #f1f2f2">
+<div class="container-fluid text-center">
+    <div class="row div1">
+        <div class="col-sm-5">
+            <h1 style="color:#4D6371">ANTI-SPYWARE</h1>
+        </div>
+    </div>
+    <div class="row div1">
+        <div class="col-sm-6" style="margin-bottom:50px">
+            <h3 style="color:#32AAC0">What kind of device do you have?</h3>
+        </div>
+    </div>
+    <form id="device_select" method="POST" action="/instruction">
+    <div style="display: flex;">
+        <!-- <div class="col-sm-5 sidenav1">
+           <h1 class="text1">WELCOME</h1>
+           <h2 class="text1">TO ANTI-SPYWARE</h2>
+           </div> -->
+        <!-- <div class="col-sm-3 div1"></div> -->
+        <div id="apple" class="evensplit">
+            <input
+                    value="apple"
+                    type="radio" name="device_type"
+                    id="apple_input" class="input-hidden"/>
+            <label for="apple_input">
+                <img
+                        class="device_image"
+                        src="{{ url_for('static', filename='images/apple.png') }}"/>
+            </label>
+        </div>
+        <!-- <div class="col-sm-2 sidenav2"></div> -->
+        <div id="android" class="evensplit">
+            <input
+                    value="android"
+                    type="radio" name="device_type"
+                    id="android_input" class="input-hidden"/>
+            <label for="android_input">
+                <img
+                        class="device_image"
+                        src="{{ url_for('static', filename='images/android.png') }}"/>
+            </label>
+        </div>
+    </div>
+
+</div>
+<div style="text-align:center;padding-top:60px">
+    <input id="next" class="button1 text1 disabled" type="submit" value="Next">
+</div>
+</form>
+
+</body>
+</html>

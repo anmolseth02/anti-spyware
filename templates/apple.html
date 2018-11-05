@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Android Instructions</title>
+  <title>Apple Instructions</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -29,13 +29,6 @@
       height: 100%;
     }
 
-    .devtext{
-      padding-left:120px;
-      /* padding-right:50px; */
-      padding-top:35px;
-      color:#24333F;
-    }
-
     p,div{font-family: 'Montserrat', sans-serif;}
 
     .caption{color:"#24333F";font-size:15px}
@@ -47,14 +40,12 @@
     .div1 {background-color:#f1f2f2}
 
     .button1 {
-      /* position: absolute; */
-      width: 142px;
-      height: 26px;
-      /* left: 913px;
-      top: 707px; */
+      width: 154px;
+      height: 37px;
       text-align: center;
       background: #32AAC0;
       border-radius: 5px;
+      font-size: 18px;
     }
 
     /* Set black background color, white text and some padding */
@@ -78,28 +69,14 @@
 </head>
 <body style="background-color: #f1f2f2">
   <script>
-
-  var counter = 0;
-
   $(document).ready(function(){
     $("#next").click(function(){
-        if (counter == 0){
-          $("#iphone").html('<img style="width:261px;height:464px;" src="icons/debug.png" >');
-          $("#devtext2").html('<b>Please click on “OK” to allow USB debugging.</b>');
-          counter = 1;
-        }
-        else if (counter == 1){
-          $("#iphone").html('<img style="width:778px;height:390px;" src="icons/androidconnect.png" >');
-          $("#caption").html('Please unlock your device and connect to the USB.');
-          document.getElementById("devtext1").style = '';
-          // document.getElementById("devtext2").style = '';
-          document.getElementById("devtext2").innerHTML = '';
-          counter = 2;
-        }
+        $("#iphone").html('<img style="width:350px;height:430px;" src="{{ url_for(\'static\', filename=\'images/trust.png\') }}" >');
+        $("#caption").html('Click on “Trust This Computer” on your device.');
+        // $("next").html('SCAN');
+        document.getElementById("next").innerHTML = 'SCAN';
+        document.getElementById("next").setAttribute("onClick","window.location='result.html'");
     });
-    // $("prev").click(function(){
-    //
-    // })
 });
 
   // $('#next').click(function(){
@@ -115,32 +92,20 @@
     </div>
   </div>
   <div style="display:flex">
-    <div id="devtext1" class="devtext" style="flex:1;">
-      <div id="devtext2" style="height:429px;font-size:22px;vertical-align:middle;text-align:left"><b>Activate Developer Mode:</b><br><br>
-      1. Open the Settings.<br>
-      2. Select System. (Only on Android 8.0 or higher)<br>
-      3. Scroll to the bottom and select About device.<br>
-      4. Scroll to the bottom and tap Build number 7 times.<br>
-      5. Return to the previous screen to find Developer options near the bottom and turn it on.</div>
-<div style="padding-top:25px"><button id="prev" onclick="window.location = 'phonesystem.html'" class="button1 text1">PREVIOUS</button></div>
-</div>
-    <div style="flex:1;padding-bottom:20px">
-      <div id="iphone">
-      <img style="width:224px;height:464px;" src="icons/devmode.png" ></div>
-      <div style="text-align:center;padding-top:25px">
-      <button id="next" class="button1 text1">NEXT</button></div>
-      </div>
+    <div style="flex:1;padding-bottom:20px" id="iphone">
+      <img style="width:450px;height:450px;" src="{{ url_for('static', filename='images/iphoneplug.png') }}" >
     </div>
   </div>
-  <!-- <div style="flex:1;color:#24333F;font-size:18px;" id="caption">Please unlock your device and connect to the USB.</div> -->
+  <div style="flex:1;color:#24333F;font-size:18px;" id="caption">Please unlock your device and connect to the USB.</div>
 
-  <!-- <div class="">
-
-    <div style="text-align:center;padding-top:25px">
+  <div style="display:flex">
+    <div style="text-align:center;padding-top:35px;flex:1">
+    <button id="prev" class="button1 text1 disabled">PREVIOUS</button></div>
+    <div style="text-align:center;padding-top:35px;flex:1">
     <button id="next" class="button1 text1 disabled">NEXT</button></div>
-    </div>
+  </div>
 
-</div> -->
+</div>
 
 <!-- <footer class="container-fluid text-center">
   <p>Footer Text</p>

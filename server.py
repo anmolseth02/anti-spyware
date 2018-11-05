@@ -55,6 +55,12 @@ def index():
         clientid=new_client_id()
     )
 
+@app.route("/phonesystem", methods=['GET'])
+def phonesystem():
+    return render_template(
+        'phonesystem.html'
+    )
+
 
 @app.route('/details/app/<device>', methods=['GET'])
 def app_details(device):
@@ -80,9 +86,17 @@ def app_details(device):
     )
 
 
-@app.route('/instruction', methods=['GET'])
+@app.route('/instruction', methods=['POST'])
 def instruction():
-    return render_template('main.html', task="instruction")
+    device = request.form.get('device_type')
+    print("Device ------------>",device)
+    if(device == "apple"):
+        return render_template('apple.html')
+    elif(device == "android"):
+        return render_template('android.html')
+    else:
+        return render_template('phonesystem.html')
+    return render_template('phonesystem.html')
 
 
 @app.route('/kill', methods=['POST', 'GET'])
