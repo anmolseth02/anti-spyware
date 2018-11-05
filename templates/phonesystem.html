@@ -57,13 +57,7 @@
             border-radius: 5px;
             font-size: 18px;
         }
-        /* Set black background color, white text and some padding */
-        /* footer {
-        background-color: #555;
-        color: white;
-        padding: 15px;
-        } */
-        /* On small screens, set height to 'auto' for sidenav and grid */
+
         @media screen and () {
             .sidenav {
                 height: auto;
@@ -86,12 +80,11 @@
             opacity: .2;
         }
         .input-hidden {
-            position: absolute;
-            left: -9999px;
+            display: none;
         }
         input[type=radio]:checked + label > img {
             opacity: 1;
-            border: 1px solid #fff;
+            /* border: 1px solid #fff; */
             box-shadow: 0 0 3px 3px #000;
         }
     </style>
@@ -176,6 +169,12 @@
                 document.getElementById("next").setAttribute("onClick", "");
                 document.getElementById("next").classList.add("disabled");
             }
+        }
+
+        function nextButton(){
+          var cc = document.getElementById("next").checked;
+          if (cc == true){
+          }
         }
 
     </script>
