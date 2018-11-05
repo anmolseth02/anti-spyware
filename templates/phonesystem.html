@@ -85,7 +85,7 @@
         input[type=radio]:checked + label > img {
             opacity: 1;
             /* border: 1px solid #fff; */
-            box-shadow: 0 0 3px 3px #000;
+            /* box-shadow: 0 0 3px 3px #000; */
         }
     </style>
     <script>
@@ -171,11 +171,15 @@
             }
         }
 
-        function nextButton(){
-          var cc = document.getElementById("next").checked;
-          if (cc == true){
-          }
+        $(document).on('change', function () {
+        // var label = $(this).parent();
+        if ($(apple_input).prop('checked') || $(android_input).prop('checked')) {
+            document.getElementById("next").classList.remove("disabled");
+        } else {
+            document.getElementById("next").classList.add("disabled");
         }
+      });
+
 
     </script>
 </head>
