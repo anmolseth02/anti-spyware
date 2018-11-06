@@ -151,11 +151,10 @@
       <div id="list" class="list" style="overflow: scroll;margin-top: 25px;">
         <ul id="applist">
           {% for appId, info in apps.items() %}
-          <li><p class="listtxt" id="{{ appId }}">{{ appId }}</p></li>
+          <li><a href="/details/app/{{ device }}?appId={{ appId }}&serial={{ serial }}"
+                 class="text text-dark">{{ info['title'] or appId}}</a></li>
           {% endfor %}
         </ul>
-        <p class="listtxt" id="app1">Find My iPhone</p>
-        <p class="listtxt" id="app2">Spyware 1</p>
       </div>
       <div style="text-align:center;margin-top: 60px;">
         <button class="button2"><b>FINISH</b></button>
@@ -167,9 +166,11 @@
       {% if not error%}
       <div class="review" id="review"><b>Here is a list of apps to review.<br>
         Click on App name to see more information.</b></div>
+      <div> {{ app }} {{ info }} {{ device }}</div>
       {% else %}
       <div class="error" id="error"><b>{{ error }}</b></div>
       {% endif %}
+
     </div>
     <!-- <div class="col-sm-1 sidenav2"></div> -->
   <!-- </div> -->

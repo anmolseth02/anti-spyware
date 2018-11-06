@@ -52,7 +52,7 @@ def index():
             'Test': test.devices()
         },
         apps={},
-        clientid=new_client_id()
+       # clientid=new_client_id()
     )
 
 @app.route("/phonesystem", methods=['GET'])
@@ -70,19 +70,14 @@ def app_details(device):
     d, info = sc.app_details(ser, appid)
     d = d.to_dict(orient='index').get(0, {})
     d['appId'] = appid
-
-    ## detect apple and put the key into d.permissions
-    #if "Ios" in str(type(sc)):
-    #    print("apple iphone")
-    #else:
-    #    print(type(sc))
-    
-    print(d.keys())
+    apps = sc.find_spyapps(serialno=ser).fillna('').to_dict(orient='index')
     return render_template(
-        'main.html', task="app",
+        'result.html', task="app",
         app=d,
         info=info,
-        device=device
+        device=device,
+        apps=apps,
+        serial=ser
     )
 
 
@@ -170,18 +165,18 @@ def scan():
             error="No device is connected!!"
 
         )
-    scanid = create_scan(clientid, ser, device)
+    #scanid = create_scan(clientid, ser, device)
     # @apps have appid, title, flags, TODO: add icon
     apps = sc.find_spyapps(serialno=ser).fillna('').to_dict(orient='index')
     print("Creating appinfo...")
-    create_mult_appinfo([(scanid, appid, json.dumps(info['flags']), '', '<new>')
-                         for appid, info in apps.items()])
+    # create_mult_appinfo([(scanid, appid, json.dumps(info['flags']), '', '<new>')
+    #                      for appid, info in apps.items()])
     rooted = sc.isrooted(ser)
     return render_template(
         'result.html', task="home",
         isrooted = "Yes" if rooted else "Don't know" if rooted is None else "No",
         apps=apps,
-        scanid=scanid,
+        # scanid=scanid,
         clientid=clientid,
         sysapps=set(), #sc.get_system_apps(serialno=ser)),
         serial=ser,
