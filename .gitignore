@@ -134,6 +134,7 @@ static_data/app-info.db.gz
 static_data/all_android_apps_5k_*.csv
 webstatic/images/tmp.png
 
-#Added by Anmol
+## Added by Anmol
 anti-spyware.iml
 logs/
+__pycache__/
