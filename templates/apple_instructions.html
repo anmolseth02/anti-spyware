@@ -73,12 +73,15 @@
   var counter = 0;
 
   $(document).ready(function(){
+     $("#next2").hide()
     $("#next").click(function(){
       if (counter == 0){
         $("#iphone").html('<img style="width:350px;height:430px;" src="{{ url_for('static', filename='images/trust.png') }}" >');
         $("#caption").html('Click on “Trust This Computer” on your device.');
         counter = 1;
         document.getElementById("next").innerHTML = 'SCAN';
+          $("#next").hide()
+          $("#next2").show()
         //document.getElementById("next").setAttribute("onClick","window.location='scan'");
       }
 
@@ -97,6 +100,7 @@
     });
 });
 
+  // $('#next').click(function(){
   // $('#next').click(function(){
   //   $('#iphone').attr('src', 'icons/trust.png');
   //   $('#iphone').attr('style', 'width:350px;height:430px;');
@@ -123,7 +127,7 @@
         <form id="device_select" method="POST" action="/scan">
             <input type="hidden" id="clientid" name="clientid" value="3487">
             <input type="hidden" id="device" name="device" value="{{ device }}">
-            <input id="next2" class="button1 text1 disabled" type="submit" value="Next">
+            <input id="next2" class="button1 text1 disabled" type="submit" value="SCAN">
         </form>
     <button id="next" class="button1 text1">NEXT</button></div>
   </div>

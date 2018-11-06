@@ -149,7 +149,7 @@ def scan():
     #     return redirect(url_for(privacy, device=device), code=302)
     sc = get_device(device)
     if not sc:
-        return render_template("main.html",
+        return render_template("result.html",
                                task="home",
                                apps={},
                                error="Please pick one device.",
@@ -165,8 +165,10 @@ def scan():
 
     if not ser:
         return render_template(
-            "main.html", task="home", apps={},
-            error="<b>No device is connected!!</b> {}".format(error)
+            "result.html", task="home", apps={},
+        #    error="No device is connected!! {}".format(error)
+            error="No device is connected!!"
+
         )
     scanid = create_scan(clientid, ser, device)
     # @apps have appid, title, flags, TODO: add icon
