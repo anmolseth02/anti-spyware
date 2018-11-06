@@ -714,3 +714,20 @@
 [2018-Nov-05 17:36] 127.0.0.1 GET http /phonesystem? 200 OK
 [2018-Nov-05 17:36] 127.0.0.1 POST http /instruction? 200 OK
 [2018-Nov-05 17:36] 127.0.0.1 GET http /webstatic/images/androidconnect.png? 200 OK
+[2018-Nov-05 18:10] 127.0.0.1 GET http /? 200 OK
+[2018-Nov-05 18:11] 127.0.0.1 GET http /phonesystem? 200 OK
+[2018-Nov-05 18:11] 127.0.0.1 POST http /instruction? 200 OK
+[2018-Nov-05 18:11] 127.0.0.1 GET http /webstatic/images/devmode.png? 200 OK
+[2018-Nov-05 18:11] 127.0.0.1 GET http /webstatic/images/debug.png? 200 OK
+[2018-Nov-05 18:11] 127.0.0.1 GET http /webstatic/images/androidconnect.png? 200 OK
+[2018-Nov-05 18:11] 127.0.0.1 GET http /phonesystem.html? 404 NOT FOUND
+[2018-Nov-05 18:15] 127.0.0.1 GET http /icons/devmode.png? 404 NOT FOUND
+[2018-Nov-05 18:15] 127.0.0.1 GET http /? 200 OK
+[2018-Nov-05 18:15] 127.0.0.1 GET http /phonesystem? 200 OK
+[2018-Nov-05 18:15] 127.0.0.1 POST http /instruction? 200 OK
+[2018-Nov-05 18:15] 127.0.0.1 GET http /phonesystem? 200 OK
+[2018-Nov-05 18:15] 127.0.0.1 POST http /instruction? 200 OK
+[2018-Nov-05 18:15] 127.0.0.1 GET http /result.html? 404 NOT FOUND
+[2018-Nov-05 18:44] 127.0.0.1 GET http /? 200 OK
+[2018-Nov-05 18:44] 127.0.0.1 GET http /phonesystem? 200 OK
+[2018-Nov-05 18:44] 127.0.0.1 POST http /instruction? 200 OK
