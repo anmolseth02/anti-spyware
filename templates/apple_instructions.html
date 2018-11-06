@@ -79,7 +79,7 @@
         $("#caption").html('Click on “Trust This Computer” on your device.');
         counter = 1;
         document.getElementById("next").innerHTML = 'SCAN';
-        document.getElementById("next").setAttribute("onClick","window.location='result.html'");
+        document.getElementById("next").setAttribute("onClick","window.location='result'");
       }
 
     });
@@ -88,7 +88,7 @@
       if (counter == 1){
         document.getElementById("next").innerHTML = 'NEXT';
         $("#iphone").html('<img style="width:450px;height:450px;" src="{{ url_for('static', filename='images/iphoneplug.png') }}" >');
-        document.getElementById("prev").setAttribute("onClick","window.location='phonesystem.html'");
+        document.getElementById("prev").setAttribute("onClick","window.location='phonesystem'");
         counter = 0;
       }
       else if (counter == 0){
