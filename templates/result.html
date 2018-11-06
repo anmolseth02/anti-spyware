@@ -148,11 +148,16 @@
   <!-- <div class="row content"> -->
     <div class="sidenav1">
       <div class="text1 results" style="padding-top:50px">Scan Results</div>
-      <div id="list" class="list">
+      <div id="list" class="list" style="overflow: scroll;margin-top: 25px;">
+        <ul id="applist">
+          {% for appId, info in apps.items() %}
+          <li><p class="listtxt" id="{{ appId }}">{{ appId }}</p></li>
+          {% endfor %}
+        </ul>
         <p class="listtxt" id="app1">Find My iPhone</p>
         <p class="listtxt" id="app2">Spyware 1</p>
       </div>
-      <div style="text-align:center">
+      <div style="text-align:center;margin-top: 60px;">
         <button class="button2"><b>FINISH</b></button>
         <button class="button3"><b>PDF REPORT</b></button>
       </div>

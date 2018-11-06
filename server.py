@@ -90,8 +90,8 @@ def app_details(device):
 def instruction():
     device = request.form.get('device_type')
     print("Device ------------>",device)
-    if(device == "apple"):
-        return render_template('apple_instructions.html')
+    if(device == "ios"):
+        return render_template('apple_instructions.html', device=device)
     elif(device == "android"):
         return render_template('android_instructions.html')
     else:
@@ -154,29 +154,29 @@ def scan():
                                apps={},
                                error="Please pick one device.",
                                clientid=clientid
-        )
+                               )
     ser = first_element_or_none(sc.devices())
     # clientid = new_client_id()
     print(">>>scanning_device", device, ser, "<<<<<")
-    error = "If an iPhone is connected, open iTunes, click through the connection dialog and wait for the \"Trust this computer\" prompt "\
-    "to pop up in the iPhone, and then scan again." if device == 'ios' else\
-    "If an Android device is connected, disconnect and reconnect the device, make sure "\
-    "developer options is activated and USB debugging is turned on on the device, and then scan again."
+    error = "If an iPhone is connected, open iTunes, click through the connection dialog and wait for the \"Trust this computer\" prompt " \
+            "to pop up in the iPhone, and then scan again." if device == 'ios' else \
+        "If an Android device is connected, disconnect and reconnect the device, make sure " \
+        "developer options is activated and USB debugging is turned on on the device, and then scan again."
 
     if not ser:
         return render_template(
             "main.html", task="home", apps={},
             error="<b>No device is connected!!</b> {}".format(error)
-    )
+        )
     scanid = create_scan(clientid, ser, device)
     # @apps have appid, title, flags, TODO: add icon
     apps = sc.find_spyapps(serialno=ser).fillna('').to_dict(orient='index')
     print("Creating appinfo...")
     create_mult_appinfo([(scanid, appid, json.dumps(info['flags']), '', '<new>')
-                          for appid, info in apps.items()])
+                         for appid, info in apps.items()])
     rooted = sc.isrooted(ser)
     return render_template(
-        'main.html', task="home",
+        'result.html', task="home",
         isrooted = "Yes" if rooted else "Don't know" if rooted is None else "No",
         apps=apps,
         scanid=scanid,

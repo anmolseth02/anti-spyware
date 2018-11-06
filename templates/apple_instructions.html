@@ -79,7 +79,7 @@
         $("#caption").html('Click on “Trust This Computer” on your device.');
         counter = 1;
         document.getElementById("next").innerHTML = 'SCAN';
-        document.getElementById("next").setAttribute("onClick","window.location='result'");
+        //document.getElementById("next").setAttribute("onClick","window.location='scan'");
       }
 
     });
@@ -120,6 +120,11 @@
     <div style="text-align:center;padding-top:25px;flex:1">
     <button id="prev" class="button1 text1">PREVIOUS</button></div>
     <div style="text-align:center;padding-top:25px;flex:1">
+        <form id="device_select" method="POST" action="/scan">
+            <input type="hidden" id="clientid" name="clientid" value="3487">
+            <input type="hidden" id="device" name="device" value="{{ device }}">
+            <input id="next2" class="button1 text1 disabled" type="submit" value="Next">
+        </form>
     <button id="next" class="button1 text1">NEXT</button></div>
   </div>
 
