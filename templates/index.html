@@ -42,6 +42,8 @@
 
     .text1 {color:#f1f2f2}
 
+    .disabled {opacity:.2}
+
     .welcome {
       padding-left:50px;
       font-size: 36px;
@@ -76,6 +78,12 @@
       font-size: 18px;
     }
 
+    .checkme {
+      width:18px;
+      height:18px;
+      vertical-align:top;
+    }
+
     /* Set black background color, white text and some padding */
     /* footer {
       background-color: #555;
@@ -99,9 +107,17 @@
       // console.log(cc);
       if (cc == true){
         window.location.assign('phonesystem');
-        // document.getElementById("scan").setAttribute("onClick","window.location='phonesystem.html'");
       }
     }
+
+    $(document).on('change', '.checkme', function () {
+    var label = $(this).parent();
+    if ($(this).prop('checked')) {
+        document.getElementById("scan").classList.remove("disabled");
+    } else {
+        document.getElementById("scan").classList.add("disabled");
+    }
+  });
 
   </script>
 </head>
@@ -118,8 +134,8 @@
       <div class="disclaimer">DISCLAIMER</div>
       <p class="distext">We will be scanning the applications that are currently on your phone. This is to check whether your personal information is being wrongfully accessed. However, there is no guarantee that we will find anything useful. We will not share the scanned results with any third parties or use them for illegal purposes.</p>
       <div style="text-align:center">
-      <p style="font-size:18px"><input id="agree" type="checkbox" style="width:18px;height:18px;vertical-align:top" name="vehicle1"> I agree to get my phone scanned.</p><br>
-      <button class="button1 text1" id="scan" onclick="proceed()">Proceed to Scan</button></div>
+      <p style="font-size:18px"><input id="agree" class="checkme" type="checkbox" name="vehicle1"> I agree to get my phone scanned.</p><br>
+      <button class="button1 text1 disabled" id="scan" onclick="proceed()">Proceed to Scan</button></div>
     </div>
     <!-- <div class="col-sm-1 sidenav2"></div> -->
   <!-- </div> -->
