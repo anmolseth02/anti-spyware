@@ -151,7 +151,7 @@
       <div id="list" class="list" style="overflow: scroll;margin-top: 25px;">
         <ul id="applist">
           {% for appId, info in apps.items() %}
-          <li><a href="/details/app/{{ device }}?appId={{ appId }}&serial={{ serial }}"
+          <li class="listtxt"><a href="/details/app/{{ device }}?appId={{ appId }}&serial={{ serial }}"
                  class="text text-dark">{{ info['title'] or appId}}</a></li>
           {% endfor %}
         </ul>
