@@ -74,7 +74,7 @@
 
   $(document).ready(function(){
      $("#next2").hide()
-    $("#next").click(function(){
+     $("#next").click(function(){
       if (counter == 0){
         $("#iphone").html('<img style="width:350px;height:430px;" src="{{ url_for('static', filename='images/trust.png') }}" >');
         $("#caption").html('Click on “Trust This Computer” on your device.');
@@ -90,6 +90,7 @@
 
     $("#prev").click(function(){
       if (counter == 1){
+        document.getElementById("next2").value = 'NEXT';
         document.getElementById("next").innerHTML = 'NEXT';
         $("#iphone").html('<img style="width:450px;height:450px;" src="{{ url_for('static', filename='images/iphoneplug.png') }}" >');
         document.getElementById("prev").setAttribute("onClick","window.location='phonesystem'");
