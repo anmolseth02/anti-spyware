@@ -42,7 +42,7 @@
 
     p,div{font-family: 'Montserrat', sans-serif;}
 
-    .caption{color:"#24333F";font-size:15px}
+    .caption{color:"#24333F";font-size:18px}
 
     /* div.ex1:hover, div.ex1:active {opacity:1;} */
     /* div.ex1{width:120px;height:168px;} */
@@ -97,7 +97,7 @@
           // $("#devtext2").html('Please unlock your device and connect to the USB.');
           // document.getElementById("devtext1").style = '';
           document.getElementById("devtext1").classList.remove("devtext");
-          document.getElementById("devtext1").classList.add("devtextnew");
+          // document.getElementById("devtext1").classList.add("devtextnew");
           document.getElementById("devtext2").style = '';
           document.getElementById("devtext2").innerHTML = '';
           document.getElementById("next").innerHTML = 'SCAN';
@@ -114,6 +114,7 @@
       }
       else if (counter == 2){
         document.getElementById("devtext1").style = "flex:1";
+        document.getElementById("devtext1").classList.add("devtext")
         $("#devtext2").html('<b>Please click on “OK” to allow USB debugging.</b>');
         $("#iphone").html('<img style="width:261px;height:464px;" src="{{ url_for('static', filename='images/debug.png') }}" >');
         $("#prep").html('');
