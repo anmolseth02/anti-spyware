@@ -15,6 +15,8 @@
 
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
     .row.content {height:1000px}
+    .notshowing {visibility:hidden}
+    .showing {visibility:visible}
 
     /* Set gray background color and 100% height */
     .sidenav1 {
@@ -102,12 +104,15 @@
     });
 });
 
-    // $('#scan_form').submit(function() {
+    // $('#device_select').submit(function() {
     //   $('#gif').css('visibility', 'visible');
     // });
 
     function loading(){
-      document.getElementById("gif").visibility = "visible";
+      console.log("see");
+      // document.getElementById("prev").classList.add("notshowing");
+      document.getElementById("gif").classList.remove("notshowing");
+      // document.getElementById("gif").visibility = "visible";
     };
 
 
@@ -130,13 +135,13 @@
     <div style="text-align:center;padding-top:25px;flex:1">
     <button id="prev" class="button1 text1">PREVIOUS</button></div>
     <div style="text-align:center;padding-top:25px;flex:1">
-        <form id="device_select" method="POST" action="/scan" id="scan_form">
+        <form id="device_select" method="POST" action="/scan" onsubmit="loading()">
             <input type="hidden" id="clientid" name="clientid" value="3487">
             <input type="hidden" id="device" name="device" value="{{ device }}">
-            <input id="next2" class="button1 text1 disabled" type="submit" onClick="loading()" value="SCAN">
+            <input id="next2" class="button1 text1 disabled" type="submit" value="SCAN">
         </form>
     <button id="next" class="button1 text1">NEXT</button>
-    <img id="gif" style="width:50px;height:50px;visibility:hidden;" src="{{ url_for('static', filename='images/KgkV.gif') }}"></div>
+    <img id="gif" class="notshowing" style="width:50px;height:50px;" src="{{ url_for('static', filename='images/KgkV.gif') }}"></div>
   </div>
 
 </div>
