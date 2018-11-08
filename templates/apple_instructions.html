@@ -78,10 +78,11 @@
       if (counter == 0){
         $("#iphone").html('<img style="width:350px;height:430px;" src="{{ url_for('static', filename='images/trust.png') }}" >');
         $("#caption").html('Click on “Trust This Computer” on your device.');
+        $("#next").hide();
+        $("#next2").show();
         counter = 1;
         document.getElementById("next").innerHTML = 'SCAN';
-          $("#next").hide()
-          $("#next2").show()
+
         //document.getElementById("next").setAttribute("onClick","window.location='scan'");
       }
 
@@ -100,11 +101,15 @@
     });
 });
 
-  // $('#next').click(function(){
-  // $('#next').click(function(){
-  //   $('#iphone').attr('src', 'icons/trust.png');
-  //   $('#iphone').attr('style', 'width:350px;height:430px;');
-  //   });
+    // $('#scan_form').submit(function() {
+    //   $('#gif').css('visibility', 'visible');
+    // });
+
+    function loading(){
+      document.getElementById("gif").visibility = "visible";
+    };
+
+
   </script>
 
 <div class="container-fluid text-center">
@@ -124,12 +129,13 @@
     <div style="text-align:center;padding-top:25px;flex:1">
     <button id="prev" class="button1 text1">PREVIOUS</button></div>
     <div style="text-align:center;padding-top:25px;flex:1">
-        <form id="device_select" method="POST" action="/scan">
+        <form id="device_select" method="POST" action="/scan" id="scan_form">
             <input type="hidden" id="clientid" name="clientid" value="3487">
             <input type="hidden" id="device" name="device" value="{{ device }}">
-            <input id="next2" class="button1 text1 disabled" type="submit" value="SCAN">
+            <input id="next2" class="button1 text1 disabled" type="submit" onClick="loading()" value="SCAN">
         </form>
-    <button id="next" class="button1 text1">NEXT</button></div>
+    <button id="next" class="button1 text1">NEXT</button>
+    <img id="gif" style="width:50px;height:50px;visibility:hidden;" src="{{ url_for('static', filename='images/KgkV.gif') }}"></div>
   </div>
 
 </div>

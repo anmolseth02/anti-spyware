@@ -103,6 +103,10 @@
           document.getElementById("next").innerHTML = 'SCAN';
           counter = 2;
         }
+        else if (counter == 2){
+          $("div").remove(".whole");
+          $("#prep").html('<img style="width:350px;height:350px;" src="{{ url_for('static', filename='images/KgkV.gif') }}">')
+        }
     });
 
     $("#prev").click(function(){
@@ -138,7 +142,7 @@
     </div>
   </div>
   <div style="align:center" id="prep"></div>
-  <div style="display:flex">
+  <div class="whole" style="display:flex">
     <div id="devtext1" class="devtext" style="flex:1;">
       <div id="devtext2" style="height:429px;font-size:22px;vertical-align:middle;text-align:left"><b>Activate Developer Mode:</b><br><br>
       1. Open the Settings.<br>
