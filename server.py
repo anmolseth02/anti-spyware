@@ -70,9 +70,11 @@ def app_details(device):
     d, info = sc.app_details(ser, appid)
     d = d.to_dict(orient='index').get(0, {})
     d['appId'] = appid
+    desc = d['description']
     apps = sc.find_spyapps(serialno=ser).fillna('').to_dict(orient='index')
     return render_template(
         'result.html', task="app",
+        desc=desc,
         app=d,
         info=info,
         device=device,
@@ -117,8 +119,8 @@ def first_element_or_none(l):
 @app.route("/privacy", methods=['GET'])
 def privacy():
     """
-    TODO: Privacy scan. Think how should it flow. 
-    Privacy is a seperate page. 
+    TODO: Privacy scan. Think how should it flow.
+    Privacy is a seperate page.
     """
     return render_template('main.html', task="privacy")
 
@@ -300,4 +302,3 @@ if __name__ == "__main__":
     logger.addHandler(handler)
 
     app.run(host="0.0.0.0", port=5000, debug=config.DEBUG)
-
