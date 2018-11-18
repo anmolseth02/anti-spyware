@@ -71,6 +71,7 @@ def app_details(device):
     d = d.to_dict(orient='index').get(0, {})
     d['appId'] = appid
     desc = d['description']
+    permissions = d['permissions']
     apps = sc.find_spyapps(serialno=ser).fillna('').to_dict(orient='index')
     return render_template(
         'result.html', task="app",
@@ -78,6 +79,7 @@ def app_details(device):
         app=d,
         info=info,
         title=info['title'],
+        permission=permissions,
         appid=appid,
         device=device,
         apps=apps,

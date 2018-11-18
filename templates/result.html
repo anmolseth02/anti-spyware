@@ -124,19 +124,9 @@
       font-size: 28px;
     }
 
-    .collapsible{
-      background-color: yellow;
-      color: red;
-      cursor: pointer;
-      padding: 18px;
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
+    .header {
+      font-weight: bold;
     }
-
-    .active, .collapsible:hover{
-       background-color:red;}
 
     .content {
       /* overflow: hidden; */
@@ -230,9 +220,12 @@
         Click on App name to see more information.</b></div>
       <div class="review" style="height:500px;">
         <p class="title">{{ title }} </p>
-        <p>App ID: {{ appid }} </p>
-        <button class="collapsilbe" id="collapse">[+]</button>
-        <div class="span1" id="content">Description: {{ desc }} </div>
+        <p><b>App ID:</b> {{ appid }} </p>
+        <div><b>Categories:</b></div>
+        <div><b>Description:</b></div>
+        <div class="span1" id="content">{{ desc }}</div>
+        <button id="collapse">[+]</button>
+        <div id="permission"><b>Permissions:</b> {{ permission }}</div>
       </div>
       {% else %}
       <div class="error" id="error"><b>{{ error }}</b></div>
