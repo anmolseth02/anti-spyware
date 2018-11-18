@@ -77,6 +77,8 @@ def app_details(device):
         desc=desc,
         app=d,
         info=info,
+        title=info['title'],
+        appid=appid,
         device=device,
         apps=apps,
         serial=ser
