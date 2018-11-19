@@ -193,25 +193,38 @@ def scan():
 
 ##############  RECORD DATA PART  ###############################
 
-
-@app.route("/delete/app/<scanid>", methods=["POST", "GET"])
+@app.route("/delete/app/<scanid>", methods=["POST","GET"])
 def delete_app(scanid):
+    # serial = request.form.get('serial')
     device = get_device_from_db(scanid)
     serial = get_serial_from_db(scanid)
     sc = get_device(device)
     appid = request.form.get('appid')
-    remark = request.form.get('remark')
-    action = "delete"
     # TODO: Record the uninstall and note
     r = sc.uninstall(serial=serial, appid=appid)
-    if r:
-        r = update_appinfo(
-            scanid=scanid, appid=appid, remark=remark, action=action
-        )
-        print("Update appinfo failed! r={}".format(r))
-    else:
-        print("Uinstall failed. r={}".format(r))
+    r &= sc.save('app_uninstall', serial=serial, appid=appid, notes=request.form.get('note', ''))
     return is_success(r, "Success!", config.error())
+
+
+
+# @app.route("/delete/app/<scanid>", methods=["POST", "GET"])
+# def delete_app(scanid):
+#     device = get_device_from_db(scanid)
+#     serial = get_serial_from_db(scanid)
+#     sc = get_device(device)
+#     appid = request.form.get('appid')
+#     remark = request.form.get('remark')
+#     action = "delete"
+#     # TODO: Record the uninstall and note
+#     r = sc.uninstall(serial=serial, appid=appid)
+#     if r:
+#         r = update_appinfo(
+#             scanid=scanid, appid=appid, remark=remark, action=action
+#         )
+#         print("Update appinfo failed! r={}".format(r))
+#     else:
+#         print("Uinstall failed. r={}".format(r))
+#     return is_success(r, "Success!", config.error())
 
 
 # @app.route('/save/appnote/<device>', methods=["POST"])
