@@ -1,5 +1,5 @@
 from flask import (
-    Flask, render_template, request, redirect, g, jsonify,
+    Flask, render_template, request, redirect, g, jsonify, make_response,
     url_for
 )
 import logging
@@ -16,6 +16,7 @@ from db import (
     create_report, new_client_id, init_db, create_mult_appinfo,
     get_device_from_db, update_mul_appinfo, get_serial_from_db
 )
+import pdfkit
 
 
 app = Flask(__name__, static_folder='webstatic')
@@ -31,6 +32,16 @@ def get_device(k):
         'ios': ios,
         'test': test
     }.get(k)
+
+def pdf_template(report_data):
+    rendered = render_template('pdf_template.html', apps=report_data)
+    pdf = pdfkit.from_string(rendered,False)
+
+    response = make_response(pdf)
+    response.headers['Content-Type'] = 'application/pdf'
+    response.headers['Content-Disposition'] = 'inline; filename=output.pdf'
+
+    return response
 
 
 
@@ -52,7 +63,7 @@ def index():
             'Test': test.devices()
         },
         apps={},
-       # clientid=new_client_id()
+        # clientid=new_client_id()
     )
 
 @app.route("/phonesystem", methods=['GET'])
@@ -60,6 +71,59 @@ def phonesystem():
     return render_template(
         'phonesystem.html'
     )
+
+@app.route("/report", methods=['POST'])
+def report():
+    device = request.form.get('device', request.args.get('device'))
+    sc = get_device(device)
+    ser = first_element_or_none(sc.devices())
+    apps = sc.find_spyapps(serialno=ser).fillna('').to_dict(orient='index')
+    return render_template(
+        'report.html',
+        apps=apps,
+        device=device,
+    )
+# @app.route("/generate", methods=['POST','GET'])
+# def generate_report():
+#     checked_app_ids = request.form.getlist("appIds")
+#     device = request.form.get('device', request.args.get('device'))
+#     sc = get_device(device)
+#     ser = first_element_or_none(sc.devices())
+#     apps = sc.find_spyapps(serialno=ser).fillna('').to_dict(orient='index')
+#     print("seriallllll---------->",ser)
+#     print("apps_-_-_-_-_-_-_-_-_-",apps)
+#     pdf_report = pdf_template(apps)
+#
+#     # sc = get_device(device)
+#     # ser = first_element_or_none(sc.devices())
+#     # apps = sc.find_spyapps(serialno=ser).fillna('').to_dict(orient='index')
+#     return pdf_report
+
+@app.route("/generate", methods=['POST','GET'])
+def generate_report():
+    checked_app_ids = request.form.getlist("appIds")
+    device = request.form.get('device', request.args.get('device'))
+    sc = get_device(device)
+    ser = first_element_or_none(sc.devices())
+    report_data = {}
+    print("seriallllll---------->",ser)
+    print("check_list",checked_app_ids, device, ser)
+    pdf_report = pdf_template("anmol")
+    for app_id in checked_app_ids:
+        app_data = []
+        d, info = sc.app_details(ser, app_id)
+        d = d.to_dict(orient='index').get(0, {})
+        d['appId'] = app_id
+        desc = d['description']
+        permissions = d['permissions']
+        print("ddddddddddddddddd",d)
+
+    # sc = get_device(device)
+    # ser = first_element_or_none(sc.devices())
+    # apps = sc.find_spyapps(serialno=ser).fillna('').to_dict(orient='index')
+    return pdf_report
+
+
 
 
 @app.route('/details/app/<device>', methods=['GET'])
@@ -73,6 +137,13 @@ def app_details(device):
     desc = d['description']
     permissions = d['permissions']
     apps = sc.find_spyapps(serialno=ser).fillna('').to_dict(orient='index')
+    print("sc -------- ",sc)
+    print("appid -------- ",appid)
+    print("d -------- ",d)
+    print("info -------- ",info)
+    print("desc  -------- ",desc)
+    print("permissions -------- ",permissions)
+
     return render_template(
         'result.html', task="app",
         desc=desc,
@@ -167,7 +238,7 @@ def scan():
     if not ser:
         return render_template(
             "result.html", task="home", apps={},
-        #    error="No device is connected!! {}".format(error)
+            #    error="No device is connected!! {}".format(error)
             error="No device is connected!!"
 
         )
@@ -193,38 +264,25 @@ def scan():
 
 ##############  RECORD DATA PART  ###############################
 
-@app.route("/delete/app/<scanid>", methods=["POST","GET"])
+
+@app.route("/delete/app/<scanid>", methods=["POST", "GET"])
 def delete_app(scanid):
-    # serial = request.form.get('serial')
     device = get_device_from_db(scanid)
     serial = get_serial_from_db(scanid)
     sc = get_device(device)
     appid = request.form.get('appid')
+    remark = request.form.get('remark')
+    action = "delete"
     # TODO: Record the uninstall and note
     r = sc.uninstall(serial=serial, appid=appid)
-    r &= sc.save('app_uninstall', serial=serial, appid=appid, notes=request.form.get('note', ''))
+    if r:
+        r = update_appinfo(
+            scanid=scanid, appid=appid, remark=remark, action=action
+        )
+        print("Update appinfo failed! r={}".format(r))
+    else:
+        print("Uinstall failed. r={}".format(r))
     return is_success(r, "Success!", config.error())
-
-
-
-# @app.route("/delete/app/<scanid>", methods=["POST", "GET"])
-# def delete_app(scanid):
-#     device = get_device_from_db(scanid)
-#     serial = get_serial_from_db(scanid)
-#     sc = get_device(device)
-#     appid = request.form.get('appid')
-#     remark = request.form.get('remark')
-#     action = "delete"
-#     # TODO: Record the uninstall and note
-#     r = sc.uninstall(serial=serial, appid=appid)
-#     if r:
-#         r = update_appinfo(
-#             scanid=scanid, appid=appid, remark=remark, action=action
-#         )
-#         print("Update appinfo failed! r={}".format(r))
-#     else:
-#         print("Uinstall failed. r={}".format(r))
-#     return is_success(r, "Success!", config.error())
 
 
 # @app.route('/save/appnote/<device>', methods=["POST"])
@@ -272,12 +330,12 @@ def after_request(response):
     if response.status_code != 500:
         ts = strftime('[%Y-%b-%d %H:%M]')
         logger.error('%s %s %s %s %s %s',
-                      ts,
-                      request.remote_addr,
-                      request.method,
-                      request.scheme,
-                      request.full_path,
-                      response.status)
+                     ts,
+                     request.remote_addr,
+                     request.method,
+                     request.scheme,
+                     request.full_path,
+                     response.status)
     return response
 
 

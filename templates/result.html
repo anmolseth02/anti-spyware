@@ -164,113 +164,113 @@
   </style>
 
   <script>
-  var counter = 0;
+      var counter = 0;
 
-  $(document).ready(function(){
-    $("#app1").click(function(){
-        $("#review").html('Find My iPhone');
-    });
-    $("#app2").click(function(){
-        $("#review").html('Spyware 1');
-    });
-});
-
-  $(document).ready(function(){
-    $("#collapse").click(function(){
-
-      if (counter == 0){
-        document.getElementById("content").classList.remove("span1");
-        document.getElementById("content").classList.add("span2");
-        $("#collapse").html('[-]');
-        counter = 1;
-      }
-      else if (counter == 1) {
-        document.getElementById("content").classList.remove("span2");
-        document.getElementById("content").classList.add("span1");
-        $("#collapse").html('[+]');
-        counter = 0;
-      }
-    });
-  });
-
-  // console.log("hi",document.referrer);
-  $(document).ready(function(){
-    if (document.referrer != 'http://localhost:5000/instruction'){
-      document.getElementById("details").classList.remove("hidden");
-      document.getElementById("uninstall").classList.remove("hidden");
-      document.getElementById("review").classList.add("hidden");
-    }
-  });
-
-  // Rahul's code
-  var device = "{{ device }}";
-  var serial = "{{ serial }}";
-  var scanid = "{{ scanid }}";
-  var clientid = "{{ clientid }}";
-
-  function report_success(m) {
-      $('#msg').html(m);
-      $('#msg').prop('class', 'alert alert-success')
-  }
-
-  function report_failure(m) {
-      $('#msg').html(m);
-      $('#msg').prop('class', 'alert alert-warning')
-  }
-
-  function postform(form1) {
-      // $(form1).prop('disabled', true);
-      d1 = $('#form-metainfo').serialize();
-      d2 = $('#form-applist').serialize();
-      $.post('/saveapps/' + scanid, data=d2);
-      $.post('/savescan/' + scanid, data = d1).done(function (r) {
-          report_success(r)
-          $('#btn-submit').prop('disabled', false);
-      }).fail(function (r) {
-          report_failure(r.responseText)
+      $(document).ready(function(){
+          $("#app1").click(function(){
+              $("#review").html('Find My iPhone');
+          });
+          $("#app2").click(function(){
+              $("#review").html('Spyware 1');
+          });
       });
-      return false;
-  }
 
-  function reset_form(form) {
-      if (confirm("Do you want to reset the form?")) {
-          window.location.href = "/";
-      }
-  }
+      $(document).ready(function(){
+          $("#collapse").click(function(){
 
-  function delete_app(appid, e) {
-            y = confirm("Are you absolutely sure? This action cannot be undone. This will permanently delete {{ appid }}. Uninstalling this application might lead to serious consequences. If you want to take a screenshot as evidence, you should also do it before the uninstallation.");
-            if (!y){return;}
-            data = {'appid': appid, 'serial': serial, 'device': device};
-            $.post('/delete/app/' + device, data=data).done(function (r){
-                $('tr#' + appid).addClass('text-muted');
-                $(e).removeClass('text-danger');
-                $(e).addClass('text-success');
-                $(e).html('&#10003;');
-                $(e).prop('onclick', null).off('click');
-                report_success(r);
-            }).fail(function(){
-                report_failure("Could not delete the app '" + appid + "'")
-            })
-        }
+              if (counter == 0){
+                  document.getElementById("content").classList.remove("span1");
+                  document.getElementById("content").classList.add("span2");
+                  $("#collapse").html('[-]');
+                  counter = 1;
+              }
+              else if (counter == 1) {
+                  document.getElementById("content").classList.remove("span2");
+                  document.getElementById("content").classList.add("span1");
+                  $("#collapse").html('[+]');
+                  counter = 0;
+              }
+          });
+      });
 
-  $(document).ready(function () {
-      $('[data-toggle="tooltip"]').tooltip();
-      $('input[type="text"]').on('keyup keypress', function (e) {
-          var keyCode = e.keyCode || e.which;
-          if (keyCode === 13) {
-              e.preventDefault();
-              return false;
+      // console.log("hi",document.referrer);
+      $(document).ready(function(){
+          if (document.referrer != 'http://localhost:5000/instruction'){
+              document.getElementById("details").classList.remove("hidden");
+              document.getElementById("uninstall").classList.remove("hidden");
+              document.getElementById("review").classList.add("hidden");
           }
       });
-      $('#btn-submit').prop('disabled', true);
-      $('#applist > tr > td > input').focusout(function (e) {
-          data = {'appId': e.target.name, 'serial': serial, 'note': e.target.value}
-          $.post('/save/appnote/' + device, data = data).done(success = function (r) {
-              report_success("Note saved.")
+
+      // Rahul's code
+      var device = "{{ device }}";
+      var serial = "{{ serial }}";
+      var scanid = "{{ scanid }}";
+      var clientid = "{{ clientid }}";
+
+      function report_success(m) {
+          $('#msg').html(m);
+          $('#msg').prop('class', 'alert alert-success')
+      }
+
+      function report_failure(m) {
+          $('#msg').html(m);
+          $('#msg').prop('class', 'alert alert-warning')
+      }
+
+      function postform(form1) {
+          // $(form1).prop('disabled', true);
+          d1 = $('#form-metainfo').serialize();
+          d2 = $('#form-applist').serialize();
+          $.post('/saveapps/' + scanid, data=d2);
+          $.post('/savescan/' + scanid, data = d1).done(function (r) {
+              report_success(r)
+              $('#btn-submit').prop('disabled', false);
+          }).fail(function (r) {
+              report_failure(r.responseText)
           });
-      })
-  });
+          return false;
+      }
+
+      function reset_form(form) {
+          if (confirm("Do you want to reset the form?")) {
+              window.location.href = "/";
+          }
+      }
+
+      function delete_app(appid, e) {
+          y = confirm("Are you absolutely sure? This action cannot be undone. This will permanently delete {{ appid }}. Uninstalling this application might lead to serious consequences. If you want to take a screenshot as evidence, you should also do it before the uninstallation.");
+          if (!y){return;}
+          data = {'appid': appid, 'serial': serial, 'device': device};
+          $.post('/delete/app/' + device, data=data).done(function (r){
+              $('tr#' + appid).addClass('text-muted');
+              $(e).removeClass('text-danger');
+              $(e).addClass('text-success');
+              $(e).html('&#10003;');
+              $(e).prop('onclick', null).off('click');
+              report_success(r);
+          }).fail(function(){
+              report_failure("Could not delete the app '" + appid + "'")
+          })
+      }
+
+      $(document).ready(function () {
+          $('[data-toggle="tooltip"]').tooltip();
+          $('input[type="text"]').on('keyup keypress', function (e) {
+              var keyCode = e.keyCode || e.which;
+              if (keyCode === 13) {
+                  e.preventDefault();
+                  return false;
+              }
+          });
+          $('#btn-submit').prop('disabled', true);
+          $('#applist > tr > td > input').focusout(function (e) {
+              data = {'appId': e.target.name, 'serial': serial, 'note': e.target.value}
+              $.post('/save/appnote/' + device, data = data).done(success = function (r) {
+                  report_success("Note saved.")
+              });
+          })
+      });
 
 
   </script>
@@ -279,41 +279,46 @@
 
 <div style="display:flex;width:100%;height:100%;" class="">
   <!-- <div class="row content"> -->
-    <div class="sidenav1">
-      <div class="text1 results" style="padding-top:50px">Scan Results</div>
-      <div id="list" class="list" style="overflow:auto;margin-top:25px;">
-        <div id="applist">
-          {% for appId, info in apps.items() %}
-          <div class="listtxt"><a style="color:#f1f2f2" href="/details/app/{{ device }}?appId={{ appId }}&serial={{ serial }}"
-                 class="text text-dark">{{ info['title'] or appId}}</a></div>
-          {% endfor %}
-        </div>
+  <div class="sidenav1">
+    <div class="text1 results" style="padding-top:50px">Scan Results</div>
+    <div id="list" class="list" style="overflow:auto;margin-top:25px;">
+      <div id="applist">
+        {% for appId, info in apps.items() %}
+        <div class="listtxt"><a style="color:#f1f2f2" href="/details/app/{{ device }}?appId={{ appId }}&serial={{ serial }}"
+                                class="text text-dark">{{ info['title'] or appId}}</a></div>
+        {% endfor %}
       </div>
-      <div style="text-align:center;margin-top: 60px;">
+    </div>
+    <div style="text-align:center;margin-top: 60px;">
+
+      <form id="report_select" method="POST" action="/report">
+        <input type="hidden" id="device" name="device" value="{{ device }}">
         <button class="button2"><b>FINISH</b></button>
-        <button class="button3"><b>PDF REPORT</b></button>
-      </div>
+        <input id="next2" class="button3" type="submit" value="PDF REPORT">
+      </form>
+      <!-- <button class="button3"><b>PDF REPORT</b></button> -->
     </div>
-    <!-- <div class="col-sm-1 sidenav2"></div> -->
-    <div class="sidenav2">
-      {% if not error%}
-      <div class="review" id="review"><b>Here is a list of apps to review.<br>
-        Click on App name to see more information.</b></div>
-      <div class="review hidden" id="details" style="height:500px;padding-bottom:135px">
-        <p class="title">{{ title }} </p>
-        <p><b>App ID:</b> {{ appid }} </p>
-        <!-- <div><b>Jailbroken/Is Rooted:</b> {{ isrooted }}</div> -->
-        <div><b>Description:</b></div>
-        <div class="span1" id="content">{{ desc }}</div>
-        <button id="collapse">[+]</button>
-        <div id="permission"><b>Permissions:</b> {{ permission }}</div>
-      </div>
-      {% else %}
-      <div class="error" id="error"><b>{{ error }}</b></div>
-      {% endif %}
-      <div id="uninstall" class="hidden" style="text-align:center">
-      <button class="button1" onclick="delete_app('{{ appId }}', this)" href="javascript:;" data-toggle="tooltip"><b>UNINSTALL</b></button></div>
+  </div>
+  <!-- <div class="col-sm-1 sidenav2"></div> -->
+  <div class="sidenav2">
+    {% if not error%}
+    <div class="review" id="review"><b>Here is a list of apps to review.<br>
+      Click on App name to see more information.</b></div>
+    <div class="review hidden" id="details" style="height:500px;padding-bottom:135px">
+      <p class="title">{{ title }} </p>
+      <p><b>App ID:</b> {{ appid }} </p>
+      <!-- <div><b>Jailbroken/Is Rooted:</b> {{ isrooted }}</div> -->
+      <div><b>Description:</b></div>
+      <div class="span1" id="content">{{ desc }}</div>
+      <button id="collapse">[+]</button>
+      <div id="permission"><b>Permissions:</b> {{ permission }}</div>
     </div>
+    {% else %}
+    <div class="error" id="error"><b>{{ error }}</b></div>
+    {% endif %}
+    <div id="uninstall" class="hidden" style="text-align:center">
+      <button class="button1" onclick="delete_app('{{ appid }}', this)" href="javascript:;" data-toggle="tooltip"><b>UNINSTALL</b></button></div>
+  </div>
 </div>
 
 <!-- <footer class="container-fluid text-center">

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Select Apps</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */
+
+        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+        .row.content {
+            height: 1000px
+        }
+
+        .notshowing {
+            visibility: hidden
+        }
+
+        .showing {
+            visibility: visible
+        }
+
+        /* Set gray background color and 100% height */
+        .sidenav1 {
+            padding-top: 0px;
+            background-color: #4D6371;
+            height: 100%;
+        }
+
+        .sidenav2 {
+            padding-top: 0px;
+            background-color: #f1f2f2;
+            height: 100%;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            padding: 10px;
+            overflow: auto;
+            align-items: self-start;
+        }
+
+        .grid-item {
+            padding: 10px;
+            font-size: medium;
+            text-align: center;
+        }
+
+        p, div {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .caption {
+            color: "#24333F";
+            font-size: 15px
+        }
+
+        /* div.ex1:hover, div.ex1:active {opacity:1;} */
+        /* div.ex1{width:120px;height:168px;} */
+
+        .text1 {
+            color: #f1f2f2
+        }
+
+        .div1 {
+            background-color: #f1f2f2
+        }
+
+        .button1 {
+            width: 154px;
+            height: 37px;
+            text-align: center;
+            background: #32AAC0;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        /* Set black background color, white text and some padding */
+        /* footer {
+          background-color: #555;
+          color: white;
+          padding: 15px;
+        } */
+
+        /* On small screens, set height to 'auto' for sidenav and grid */
+        @media screen and () {
+            .sidenav {
+                height: auto;
+                /* padding: 15px; */
+            }
+
+            .row.content {
+                height: auto;
+                100%
+            }
+        }
+    </style>
+
+
+</head>
+<body style="background-color: #f1f2f2">
+<script>
+
+</script>
+
+<div class="container-fluid text-center">
+    <div class="row div1">
+        <div class="col-sm-5">
+            <h1 style="color:#4D6371">ANTI-SPYWARE</h1>
+        </div>
+    </div>
+    <div style="display:flex">
+        <div id="list" class="list" style="overflow:auto;margin-top:25px;">
+            <form id="generate_report" method="POST" action="/generate">
+                <div id="applist" class="grid-container">
+                    ANMOL {{ title }}
+                    {% for appId, info in apps.items() %}
+                    <div class="grid-item"><input id="appId" type="checkbox" class="grid-item" name="appIds"
+                                                  value="{{ appId }}"/>{{ info['title'] or appId}}
+                    </div>
+                    {% endfor %}
+                    <input type="hidden" id="device" name="device" value="{{ device }}">
+                </div>
+                <input id="generate" class="button1 text1 disabled" type="submit" value="GENERATE PDF REPORT">
+            </form>
+        </div>
+    </div>
+    <div style="display:flex">
+    </div>
+
+</div>
+
+<!-- <footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer> -->
+
+</body>
+</html>
