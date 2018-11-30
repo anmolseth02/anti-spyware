@@ -33,8 +33,8 @@ def get_device(k):
         'test': test
     }.get(k)
 
-def pdf_template(report_data):
-    rendered = render_template('pdf_template.html', apps=report_data)
+def pdf_template(report_data,device,ser):
+    rendered = render_template('pdf_template.html', apps=report_data, device=device, serial=ser)
     pdf = pdfkit.from_string(rendered,False)
 
     response = make_response(pdf)
@@ -83,45 +83,45 @@ def report():
         apps=apps,
         device=device,
     )
-# @app.route("/generate", methods=['POST','GET'])
-# def generate_report():
-#     checked_app_ids = request.form.getlist("appIds")
-#     device = request.form.get('device', request.args.get('device'))
-#     sc = get_device(device)
-#     ser = first_element_or_none(sc.devices())
-#     apps = sc.find_spyapps(serialno=ser).fillna('').to_dict(orient='index')
-#     print("seriallllll---------->",ser)
-#     print("apps_-_-_-_-_-_-_-_-_-",apps)
-#     pdf_report = pdf_template(apps)
-#
-#     # sc = get_device(device)
-#     # ser = first_element_or_none(sc.devices())
-#     # apps = sc.find_spyapps(serialno=ser).fillna('').to_dict(orient='index')
-#     return pdf_report
-
 @app.route("/generate", methods=['POST','GET'])
 def generate_report():
     checked_app_ids = request.form.getlist("appIds")
     device = request.form.get('device', request.args.get('device'))
     sc = get_device(device)
     ser = first_element_or_none(sc.devices())
-    report_data = {}
+    apps = sc.find_spyapps(serialno=ser).fillna('').to_dict(orient='index')
     print("seriallllll---------->",ser)
-    print("check_list",checked_app_ids, device, ser)
-    pdf_report = pdf_template("anmol")
-    for app_id in checked_app_ids:
-        app_data = []
-        d, info = sc.app_details(ser, app_id)
-        d = d.to_dict(orient='index').get(0, {})
-        d['appId'] = app_id
-        desc = d['description']
-        permissions = d['permissions']
-        print("ddddddddddddddddd",d)
+    print("apps_-_-_-_-_-_-_-_-_-",apps)
+    pdf_report = pdf_template(apps,device,ser)
 
     # sc = get_device(device)
     # ser = first_element_or_none(sc.devices())
     # apps = sc.find_spyapps(serialno=ser).fillna('').to_dict(orient='index')
     return pdf_report
+
+# @app.route("/generate", methods=['POST','GET'])
+# def generate_report():
+#     checked_app_ids = request.form.getlist("appIds")
+#     device = request.form.get('device', request.args.get('device'))
+#     sc = get_device(device)
+#     ser = first_element_or_none(sc.devices())
+#     report_data = {}
+#     print("seriallllll---------->",ser)
+#     print("check_list",checked_app_ids, device, ser)
+#     pdf_report = pdf_template("anmol")
+#     for app_id in checked_app_ids:
+#         app_data = []
+#         d, info = sc.app_details(ser, app_id)
+#         d = d.to_dict(orient='index').get(0, {})
+#         d['appId'] = app_id
+#         desc = d['description']
+#         permissions = d['permissions']
+#         print("ddddddddddddddddd",d)
+#
+#     # sc = get_device(device)
+#     # ser = first_element_or_none(sc.devices())
+#     # apps = sc.find_spyapps(serialno=ser).fillna('').to_dict(orient='index')
+#     return pdf_report
 
 
 
@@ -137,18 +137,19 @@ def app_details(device):
     desc = d['description']
     permissions = d['permissions']
     apps = sc.find_spyapps(serialno=ser).fillna('').to_dict(orient='index')
-    print("sc -------- ",sc)
-    print("appid -------- ",appid)
-    print("d -------- ",d)
-    print("info -------- ",info)
-    print("desc  -------- ",desc)
-    print("permissions -------- ",permissions)
+    # print("sc -------- ",sc)
+    # print("appid -------- ",appid)
+    # print("d -------- ",d)
+    # print("info -------- ",info)
+    # print("desc  -------- ",desc)
+    print("permissions -------- ",apps[appid]['html_flags'])
 
     return render_template(
         'result.html', task="app",
         desc=desc,
         app=d,
         info=info,
+        flags=apps[appid]['html_flags'],
         title=info['title'],
         permission=permissions,
         appid=appid,
@@ -220,6 +221,7 @@ def scan():
     # if action == "Privacy Check":
     #     return redirect(url_for(privacy, device=device), code=302)
     sc = get_device(device)
+    print("SC inside scan --------->",sc)
     if not sc:
         return render_template("result.html",
                                task="home",
@@ -227,6 +229,7 @@ def scan():
                                error="Please pick one device.",
                                clientid=clientid
                                )
+    print("sc.devices() in scan---------->",sc.devices())
     ser = first_element_or_none(sc.devices())
     # clientid = new_client_id()
     print(">>>scanning_device", device, ser, "<<<<<")

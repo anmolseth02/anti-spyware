@@ -119,10 +119,10 @@
         <div id="list" class="list" style="overflow:auto;margin-top:25px;">
             <form id="generate_report" method="POST" action="/generate">
                 <div id="applist" class="grid-container">
-                    ANMOL {{ title }}
+                     {{ title }}
                     {% for appId, info in apps.items() %}
                     <div class="grid-item"><input id="appId" type="checkbox" class="grid-item" name="appIds"
-                                                  value="{{ appId }}"/>{{ info['title'] or appId}}
+                                                  value="{{ appId }}" checked/>{{ info['title'] or appId}}
                     </div>
                     {% endfor %}
                     <input type="hidden" id="device" name="device" value="{{ device }}">

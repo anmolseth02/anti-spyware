@@ -23,6 +23,11 @@
       height: 100%;
     }
 
+    li a.link:active{
+      font-weight:bold;
+      color:red;
+    }
+
     .sidenav1 {
       /* padding-top: 0px; */
       background-color: #4D6371;
@@ -153,6 +158,13 @@
       height:80%;
     }
 
+    .alert-warning{
+      background-color:#32AAC0;
+    }
+
+    li#listtxt a .active {
+      font-weight: bold;}
+
 
     @media screen and () {
       .sidenav {
@@ -201,6 +213,15 @@
               document.getElementById("review").classList.add("hidden");
           }
       });
+
+      $(document).ready(function(){
+          console.log("whattt");
+          $('li a').click(function(e){
+              $(this).css('font-weight','bold');});
+      });
+
+
+
 
       // Rahul's code
       var device = "{{ device }}";
@@ -284,14 +305,14 @@
     <div id="list" class="list" style="overflow:auto;margin-top:25px;">
       <div id="applist">
         {% for appId, info in apps.items() %}
-        <div class="listtxt"><a style="color:#f1f2f2" href="/details/app/{{ device }}?appId={{ appId }}&serial={{ serial }}"
-                                class="text text-dark">{{ info['title'] or appId}}</a></div>
+        <li class="listtxt"><a class="{{ info.class_ }} appid" style="color:#f1f2f2" href="/details/app/{{ device }}?appId={{ appId }}&serial={{ serial }}"
+                               class="text text-dark">{{ info['title'] or appId}}</a></li>
         {% endfor %}
       </div>
     </div>
     <div style="text-align:center;margin-top: 60px;">
 
-      <form id="report_select" method="POST" action="/report">
+      <form id="report_select" method="POST" action="/generate">
         <input type="hidden" id="device" name="device" value="{{ device }}">
         <button class="button2"><b>FINISH</b></button>
         <input id="next2" class="button3" type="submit" value="PDF REPORT">
@@ -308,6 +329,7 @@
       <p class="title">{{ title }} </p>
       <p><b>App ID:</b> {{ appid }} </p>
       <!-- <div><b>Jailbroken/Is Rooted:</b> {{ isrooted }}</div> -->
+      <div><b>Categories:</b> {{ flags | safe }}</div>
       <div><b>Description:</b></div>
       <div class="span1" id="content">{{ desc }}</div>
       <button id="collapse">[+]</button>
