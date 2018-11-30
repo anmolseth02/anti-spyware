@@ -270,8 +270,11 @@ def scan():
 
 @app.route("/delete/app/<scanid>", methods=["POST", "GET"])
 def delete_app(scanid):
-    device = get_device_from_db(scanid)
-    serial = get_serial_from_db(scanid)
+    # device = get_device_from_db(scanid)
+    # serial = get_serial_from_db(scanid)
+    device = request.form.get('device')
+    serial = request.form.get('serial')
+
     sc = get_device(device)
     appid = request.form.get('appid')
     remark = request.form.get('remark')

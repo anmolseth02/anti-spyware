@@ -11,7 +11,7 @@ function updateProgress(percentage) {
     $('#scan-prog').text(percentage + "%");
 }
 
-function delete_app(appid, e) {
+function delete_app(appid, device, serial, e) {
     y = confirm(`Are you sure you want to delete the app  '${appid}'?"`);
     if (!y){return;}
     data = {'appid': appid, 'serial': serial, 'device': device};

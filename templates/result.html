@@ -259,7 +259,7 @@
           }
       }
 
-      function delete_app(appid, e) {
+      function delete_app(appid, device, serial, e) {
           y = confirm("Are you absolutely sure? This action cannot be undone. This will permanently delete {{ appid }}. Uninstalling this application might lead to serious consequences. If you want to take a screenshot as evidence, you should also do it before the uninstallation.");
           if (!y){return;}
           data = {'appid': appid, 'serial': serial, 'device': device};
@@ -314,9 +314,12 @@
 
       <form id="report_select" method="POST" action="/generate">
         <input type="hidden" id="device" name="device" value="{{ device }}">
-        <button class="button2"><b>FINISH</b></button>
         <input id="next2" class="button3" type="submit" value="PDF REPORT">
       </form>
+      <form id="finish" method="GET" action="/">
+        <input id="finish_button" class="button2" type="submit" value="FINISH">
+      </form>
+
       <!-- <button class="button3"><b>PDF REPORT</b></button> -->
     </div>
   </div>
@@ -339,7 +342,7 @@
     <div class="error" id="error"><b>{{ error }}</b></div>
     {% endif %}
     <div id="uninstall" class="hidden" style="text-align:center">
-      <button class="button1" onclick="delete_app('{{ appid }}', this)" href="javascript:;" data-toggle="tooltip"><b>UNINSTALL</b></button></div>
+      <button class="button1" onclick="delete_app('{{ appid }}','{{ device }}', '{{ serial }}', this)" href="javascript:;" data-toggle="tooltip"><b>UNINSTALL</b></button></div>
   </div>
 </div>
 
