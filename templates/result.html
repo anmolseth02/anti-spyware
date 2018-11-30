@@ -162,6 +162,10 @@
       background-color:#32AAC0;
     }
 
+    .alert-info{
+      background-color:#24333F;
+    }
+
     li#listtxt a .active {
       font-weight: bold;}
 
@@ -172,6 +176,11 @@
         padding: 0px;
       }
       .row.content {height:auto;}
+    }
+    .colorbox{
+      line-height:20px;
+      width:20px;
+      position:absolute;
     }
   </style>
 
@@ -302,6 +311,11 @@
   <!-- <div class="row content"> -->
   <div class="sidenav1">
     <div class="text1 results" style="padding-top:50px">Scan Results</div>
+    <div class="text1 results" style="margin-top:10px;">
+      <div class="colorbox" style="background-color:#32AAC0;">&nbsp;&nbsp;&nbsp;&nbsp;</div><div style="font-size:14px;display:absolute"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On Store Dual-Use Apps</div></div>
+    <div class="text1 results" style="margin-top:10px;">
+      <div class="colorbox" style="background-color:#24333F;">&nbsp;&nbsp;&nbsp;&nbsp;</div><div style="font-size:14px;display:absolute"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Regex Apps</div></div>
+
     <div id="list" class="list" style="overflow:auto;margin-top:25px;">
       <div id="applist">
         {% for appId, info in apps.items() %}

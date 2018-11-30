@@ -32,27 +32,30 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #f1f2f2;
+            background-color: white;
             font: 12pt "Montserrat";
+            padding: 1cm;
+            border: 5px #32AAC0 solid;
+            /* height: 256mm; */
         }
         * {
             box-sizing: border-box;
             -moz-box-sizing: border-box;
         }
         .page {
-            width: 21cm;
+            /* width: 21cm;
             min-height: 25.6cm;
-            /* padding: 2cm; */
-            margin: 1cm auto;
-            border: 1px #D3D3D3 solid;
+            padding: 2cm;
+            margin: 1cm auto; */
+            /* border: 1px #D3D3D3 solid;
             border-radius: 5px;
             background: white;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
         }
         .subpage {
-            padding: 1cm;
+            /* padding: 1cm;
             border: 5px #32AAC0 solid;
-            height: 256mm;
+            height: 256mm; */
             /* outline: 2cm #4D6371 solid; */
         }
 
@@ -69,9 +72,14 @@
         @page {
             size: A4;
             margin: 0;
+            page-break-after: always;
         }
 
     </style>
+
+    <script>
+
+    </script>
 
 <body>
 <div>
@@ -90,7 +98,7 @@
                 </div>
                 {% for appId, info in apps.items() %}
                 <!--<li class="listtxt"><a class="{{ info.class_ }} appid" style="color:#f1f2f2" href="/details/app/{{ device }}?appId={{ appId }}&serial={{ serial }}"-->
-                                       <!--class="text text-dark">{{ info['title'] or appId}}</a></li>-->
+                <!--class="text text-dark">{{ info['title'] or appId}}</a></li>-->
                 <p><b>App Name:</b> {{ info['title'] }} </p>
                 <p><b>App ID:</b> {{ appId }} </p>
                 <p><b>Description:</b> {{ desc }} </p>
@@ -100,11 +108,12 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="page">
+        <!-- <div class="page">
             <div class="subpage"></div>
-        </div>
+        </div> -->
     </div>
 
 </div>
 </body>
 </head>
+
