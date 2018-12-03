@@ -200,15 +200,6 @@
       var counter = 0;
 
       $(document).ready(function(){
-          $("#app1").click(function(){
-              $("#review").html('Find My iPhone');
-          });
-          $("#app2").click(function(){
-              $("#review").html('Spyware 1');
-          });
-      });
-
-      $(document).ready(function(){
           $("#collapse").click(function(){
 
               if (counter == 0){
@@ -236,7 +227,7 @@
       });
 
       $(document).ready(function(){
-          console.log("whattt");
+          // console.log("whattt");
           $('li a').click(function(e){
               $(this).css('font-weight','bold');});
       });
@@ -296,6 +287,16 @@
           })
       }
 
+      function finish(appid,device,serial,e){
+        x = confirm("Are you sure? This will disconnect the device and clear the scanned results.")
+        if (x){
+          window.location.assign('/');
+        }
+        else{
+          return;
+        }
+      }
+
       $(document).ready(function () {
           $('[data-toggle="tooltip"]').tooltip();
           $('input[type="text"]').on('keyup keypress', function (e) {
@@ -342,9 +343,9 @@
         <input type="hidden" id="device" name="device" value="{{ device }}">
         <input id="next2" class="button3" type="submit" value="PDF REPORT">
       </form>
-      <form id="finish" method="GET" action="/" style="float:right;padding-right:160px;">
-        <input id="finish_button" class="button2" type="submit" value="FINISH">
-      </form>
+      <div id="finish" style="float:right;padding-right:160px;">
+        <button id="finish_button" class="button2" type="submit" onclick="finish('{{ appid }}','{{ device }}', '{{ serial }}', this)">FINISH</button>
+      </div>
 
       <!-- <button class="button3"><b>PDF REPORT</b></button> -->
     </div>

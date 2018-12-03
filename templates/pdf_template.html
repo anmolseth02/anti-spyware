@@ -78,6 +78,11 @@
     </style>
 
     <script>
+    $(document).ready(function(){
+      var date = new Date();
+      $("#date").attr("value", date);
+      // document.getElementById("date").innerHTML = "Scan Date:"+Date();
+    });
 
     </script>
 
@@ -92,7 +97,7 @@
             <div class="subpage">
 
                 <div class="default">
-                    <p>Scan Date: 11/30/2018</p>
+                    <p id="date">Scan Date: 12/3/2018</p>
                     <p>Device Serial: {{ serial }}</p>
                     <p>Here are the scan results of your  {{ device }} device :</p>
                 </div>
@@ -116,4 +121,3 @@
 </div>
 </body>
 </head>
-
