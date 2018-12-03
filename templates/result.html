@@ -144,10 +144,12 @@
     .span1{
       /* display:inline-block; */
       width:600px;
+      height:130px;
       /* height:40%; */
-      white-space: nowrap;
+      /* white-space: nowrap; */
       overflow:hidden !important;
       text-overflow: ellipsis;
+      font-size:19px;
     }
 
     .span2{
@@ -156,15 +158,20 @@
       padding-right:50px;
       width:100%;
       height:80%;
+      font-size:19px;
     }
 
     .alert-warning{
-      background-color:#32AAC0;
+      background-color:#4F537E;
       color:black;
     }
 
     .alert-info{
       background-color:#24333F;
+    }
+
+    .heads{
+      padding-bottom:10px;
     }
 
     li#listtxt a .active {
@@ -313,7 +320,7 @@
   <div class="sidenav1">
     <div class="text1 results" style="padding-top:50px">Scan Results</div>
     <div class="text1 results" style="margin-top:10px;">
-      <div class="colorbox" style="background-color:#32AAC0;">&nbsp;&nbsp;&nbsp;&nbsp;</div><div style="font-size:14px;display:absolute;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On Store Dual-Use Apps</div></div>
+      <div class="colorbox" style="background-color:#4F537E;">&nbsp;&nbsp;&nbsp;&nbsp;</div><div style="font-size:14px;display:absolute;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On Store Dual-Use Apps</div></div>
     <div class="text1 results" style="margin-top:10px;">
       <div class="colorbox" style="background-color:#24333F;">&nbsp;&nbsp;&nbsp;&nbsp;</div><div style="font-size:14px;display:absolute"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Regex Apps</div></div>
 
@@ -345,18 +352,18 @@
       Click on App name to see more information.</b></div>
     <div class="review hidden" id="details" style="height:500px;padding-bottom:135px">
       <p class="title">{{ title }} </p>
-      <p><b>App ID:</b> {{ appid }} </p>
+      <div class="heads"><b>App ID:</b> {{ appid }}</div>
       <!-- <div><b>Jailbroken/Is Rooted:</b> {{ isrooted }}</div> -->
-      <div><b>Categories:</b> {{ flags | safe }}</div>
-      <div><b>Description:</b></div>
+      <div class="heads"><b>Categories:</b> {{ flags | safe }}</div>
+      <div class="heads"><b>Description:</b></div>
       <div class="span1" id="content">{{ desc | safe }}</div>
       <button id="collapse">[+]</button>
-      <div id="permission"><b>Permissions:</b> {{ permission }}</div>
+      <div id="permission" class="heads" style="padding-top:10px"><b>Permissions:</b> {{ permission }}</div>
     </div>
     {% else %}
     <div class="error" id="error"><b>{{ error }}</b></div>
     {% endif %}
-    <div id="uninstall" class="hidden" style="text-align:center;padding-top:60px;">
+    <div id="uninstall" class="hidden" style="text-align:center;padding-top:100px">
       <button class="button1" onclick="delete_app('{{ appid }}','{{ device }}', '{{ serial }}', this)" href="javascript:;" data-toggle="tooltip"><b>UNINSTALL</b></button></div>
   </div>
 </div>
