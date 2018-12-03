@@ -136,13 +136,14 @@ def app_details(device):
     d['appId'] = appid
     desc = d['description']
     permissions = d['permissions']
+    perm = " ".join(str(x) for x in permissions)
     apps = sc.find_spyapps(serialno=ser).fillna('').to_dict(orient='index')
     # print("sc -------- ",sc)
     # print("appid -------- ",appid)
     # print("d -------- ",d)
     # print("info -------- ",info)
     # print("desc  -------- ",desc)
-    print("permissions -------- ",apps[appid]['html_flags'])
+    print("permissions -------- ",perm)
 
     return render_template(
         'result.html', task="app",
@@ -151,7 +152,7 @@ def app_details(device):
         info=info,
         flags=apps[appid]['html_flags'],
         title=info['title'],
-        permission=permissions,
+        permission=perm,
         appid=appid,
         device=device,
         apps=apps,
