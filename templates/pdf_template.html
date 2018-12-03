@@ -97,7 +97,7 @@
             <div class="subpage">
 
                 <div class="default">
-                    <p id="date">Scan Date: 12/3/2018</p>
+                    <p id="date">Scan Date: {{ date }}</p>
                     <p>Device Serial: {{ serial }}</p>
                     <p>Here are the scan results of your  {{ device }} device :</p>
                 </div>
@@ -106,7 +106,6 @@
                 <!--class="text text-dark">{{ info['title'] or appId}}</a></li>-->
                 <p><b>App Name:</b> {{ info['title'] }} </p>
                 <p><b>App ID:</b> {{ appId }} </p>
-                <p><b>Description:</b> {{ desc }} </p>
                 <p><b>Flags:</b> {{ info['flags'] }} </p>
                 <hr class='dotted' />
                 <br/>

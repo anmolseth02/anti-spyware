@@ -17,6 +17,7 @@ from db import (
     get_device_from_db, update_mul_appinfo, get_serial_from_db
 )
 import pdfkit
+import datetime
 
 
 app = Flask(__name__, static_folder='webstatic')
@@ -33,8 +34,8 @@ def get_device(k):
         'test': test
     }.get(k)
 
-def pdf_template(report_data,device,ser):
-    rendered = render_template('pdf_template.html', apps=report_data, device=device, serial=ser)
+def pdf_template(report_data,device,ser,date):
+    rendered = render_template('pdf_template.html', apps=report_data, device=device, serial=ser, date=date)
     pdf = pdfkit.from_string(rendered,False)
 
     response = make_response(pdf)
@@ -90,40 +91,16 @@ def generate_report():
     sc = get_device(device)
     ser = first_element_or_none(sc.devices())
     apps = sc.find_spyapps(serialno=ser).fillna('').to_dict(orient='index')
-    print("seriallllll---------->",ser)
-    print("apps_-_-_-_-_-_-_-_-_-",apps)
-    pdf_report = pdf_template(apps,device,ser)
+    # print("seriallllll---------->",ser)
+    # print("apps_-_-_-_-_-_-_-_-_-",apps)
+    date = datetime.datetime.today().strftime('%m-%d-%y')
+    pdf_report = pdf_template(apps,device,ser,date)
 
-    # sc = get_device(device)
+
+# sc = get_device(device)
     # ser = first_element_or_none(sc.devices())
     # apps = sc.find_spyapps(serialno=ser).fillna('').to_dict(orient='index')
     return pdf_report
-
-# @app.route("/generate", methods=['POST','GET'])
-# def generate_report():
-#     checked_app_ids = request.form.getlist("appIds")
-#     device = request.form.get('device', request.args.get('device'))
-#     sc = get_device(device)
-#     ser = first_element_or_none(sc.devices())
-#     report_data = {}
-#     print("seriallllll---------->",ser)
-#     print("check_list",checked_app_ids, device, ser)
-#     pdf_report = pdf_template("anmol")
-#     for app_id in checked_app_ids:
-#         app_data = []
-#         d, info = sc.app_details(ser, app_id)
-#         d = d.to_dict(orient='index').get(0, {})
-#         d['appId'] = app_id
-#         desc = d['description']
-#         permissions = d['permissions']
-#         print("ddddddddddddddddd",d)
-#
-#     # sc = get_device(device)
-#     # ser = first_element_or_none(sc.devices())
-#     # apps = sc.find_spyapps(serialno=ser).fillna('').to_dict(orient='index')
-#     return pdf_report
-
-
 
 
 @app.route('/details/app/<device>', methods=['GET'])
@@ -167,7 +144,7 @@ def instruction():
     if(device == "ios"):
         return render_template('apple_instructions.html', device=device)
     elif(device == "android"):
-        return render_template('android_instructions.html')
+        return render_template('android_instructions.html', device=device)
     else:
         return render_template('phonesystem.html')
     return render_template('phonesystem.html')
