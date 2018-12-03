@@ -136,7 +136,7 @@ def app_details(device):
     d['appId'] = appid
     desc = d['description']
     permissions = d['permissions']
-    perm = " ".join(str(x) for x in permissions)
+    perm = ", ".join(str(x) for x in permissions)
     apps = sc.find_spyapps(serialno=ser).fillna('').to_dict(orient='index')
     # print("sc -------- ",sc)
     # print("appid -------- ",appid)
