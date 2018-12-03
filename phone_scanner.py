@@ -20,7 +20,7 @@ class AppScan(object):
         config.APP_INFO_SQLITE_FILE.replace('sqlite:///', ''),
         check_same_thread=False
     )
-    
+
     def __init__(self, dev_type, cli):
         assert dev_type in config.DEV_SUPPRTED, \
             "dev={!r} is not supported yet. Allowed={}"\
@@ -70,7 +70,7 @@ class AppScan(object):
 
     def app_details(self, serialno, appid):
         try:
-            d = pd.read_sql('select * from apps where appid=?', 
+            d = pd.read_sql('select * from apps where appid=?',
                             self.app_info_conn,
                             params=(appid,))
             if not isinstance(d.get('permissions', ''), list):
@@ -121,6 +121,7 @@ class AppScan(object):
         r.sort_values(by=['score', 'appId'], ascending=[False, True], inplace=True, na_position='last')
         r.set_index('appId', inplace=True)
         return r[['title', 'flags', 'score', 'class_', 'html_flags']]
+        # return desc as well
 
     def flag_apps(self, serialno):
         installed_apps = self.get_apps(serialno)
@@ -260,7 +261,7 @@ class AndroidScan(AppScan):
             return True
 
 
-    
+
 class IosScan(AppScan):
     """
     Needs ios-deploy (compiled with it) or run `bash scripts/setup.sh`
@@ -331,5 +332,3 @@ class TestScan(AppScan):
 
     def uninstall(self, serial, appid):
         return True
-
-

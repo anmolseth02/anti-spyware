@@ -103,7 +103,7 @@
     .list{
       font-size: 24px;
       color: #f1f2f2;
-      width:60%;
+      width:70%;
       height:60%;
       /* background:grey; */
       text-align:center;
@@ -160,6 +160,7 @@
 
     .alert-warning{
       background-color:#32AAC0;
+      color:black;
     }
 
     .alert-info{
@@ -348,7 +349,7 @@
       <!-- <div><b>Jailbroken/Is Rooted:</b> {{ isrooted }}</div> -->
       <div><b>Categories:</b> {{ flags | safe }}</div>
       <div><b>Description:</b></div>
-      <div class="span1" id="content">{{ desc }}</div>
+      <div class="span1" id="content">{{ desc | safe }}</div>
       <button id="collapse">[+]</button>
       <div id="permission"><b>Permissions:</b> {{ permission }}</div>
     </div>
