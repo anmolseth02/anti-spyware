@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Scan Results</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -62,7 +62,7 @@
       font-size: 24px;
       padding-left:70px;
       padding-right:0px;
-      padding-top:50px;
+      /* padding-top:50px; */
       color:#24333F;
     }
 
@@ -104,11 +104,11 @@
       font-size: 24px;
       color: #f1f2f2;
       width:70%;
-      height:60%;
+      height:50%;
       /* background:grey; */
       text-align:center;
       padding-left:100px;
-      padding-top:10px;
+      /* padding-top:10px; */
       /* position:inherit; */
       margin-right:0;
       /* background: red; */
@@ -162,7 +162,7 @@
     }
 
     .alert-warning{
-      background-color:#4F537E;
+      background-color:#64699E;
       color:black;
     }
 
@@ -325,9 +325,13 @@
   <div class="sidenav1">
     <div class="text1 results" style="padding-top:50px">Scan Results</div>
     <div class="text1 results" style="margin-top:10px;">
-      <div class="colorbox" style="background-color:#4F537E;">&nbsp;&nbsp;&nbsp;&nbsp;</div><div style="font-size:14px;display:absolute;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On Store Dual-Use Apps</div></div>
+      <div class="colorbox" style="background-color:#64699E;">&nbsp;&nbsp;&nbsp;&nbsp;</div><div style="font-size:14px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On Store Dual-Use Apps</div></div>
     <div class="text1 results" style="margin-top:10px;">
-      <div class="colorbox" style="background-color:#24333F;">&nbsp;&nbsp;&nbsp;&nbsp;</div><div style="font-size:14px;display:absolute"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Regex Apps</div></div>
+      <div class="colorbox" style="background-color:#8A649E;">&nbsp;&nbsp;&nbsp;&nbsp;</div><div style="font-size:14px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On Store Spyware</div></div>
+      <div class="text1 results" style="margin-top:10px;">
+        <div class="colorbox" style="background-color:#5656C4;">&nbsp;&nbsp;&nbsp;&nbsp;</div><div style="font-size:14px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Off Store Spyware</div></div>
+    <div class="text1 results" style="margin-top:10px;">
+      <div class="colorbox" style="background-color:#24333F;">&nbsp;&nbsp;&nbsp;&nbsp;</div><div style="font-size:14px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Regex Apps</div></div>
 
     <div id="list" class="list" style="overflow:auto;margin-top:25px;">
       <div id="applist">
@@ -353,9 +357,9 @@
   <!-- <div class="col-sm-1 sidenav2"></div> -->
   <div class="sidenav2">
     {% if not error%}
-    <div class="review" id="review"><b>Here is a list of apps to review.<br>
+    <div class="review" id="review" style="position:relative;top:40%"><b>Here is a list of apps to review.<br>
       Click on App name to see more information.</b></div>
-    <div class="review hidden" id="details" style="height:500px;padding-bottom:135px">
+    <div class="review hidden" id="details" style="height:500px;padding-bottom:135px;padding-top:50px;">
       <p class="title">{{ title }} </p>
       <div class="heads"><b>App ID:</b> {{ appid }}</div>
       <!-- <div><b>Jailbroken/Is Rooted:</b> {{ isrooted }}</div> -->
